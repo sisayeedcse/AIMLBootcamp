@@ -1,81 +1,68 @@
-# IEEE AI/ML Bootcamp
+# IEEE AI/ML Bootcamp 2.0
+**From Fundamentals to Real-World Applications (Learn • Build • Deploy)**
 
-Welcome to the official repository for the **IEEE AI/ML Bootcamp** website, hosted by the IEEE Computer Society Premier University Student Branch Chapter. This website serves as the central hub for information, schedules, and registration for the bootcamp.
+Organized by the **IEEE Computer Society Premier University Student Branch Chapter**.
 
-## 🚀 Features
+---
 
-- **Dynamic Landing Page**: A modern, sleek, and responsive single-page application built with Next.js and React.
-- **Interactive UI**: Engaging micro-animations and scroll effects powered by Framer Motion.
-- **Comprehensive Sections**: Detailed information covering curriculum, schedules, speakers, benefits, and innovation challenges.
-- **Gallery**: A showcase of past events and bootcamp highlights.
-- **Registration**: Direct pathways for students to sign up and participate.
+## 📅 Event Schedule
 
-## 🛠 Tech Stack
+The bootcamp is divided into two phases to ensure a comprehensive learning journey from absolute basics to advanced deployment:
 
-- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
-- **Library**: [React 19](https://react.dev/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Phase 1: Online Python Foundation**
+  - **Dates:** August 25–27, 2026 (3 Days)
+  - **Format:** Online
+  - **Focus:** Python syntax, data structures, Pandas, NumPy, and Data Visualization.
 
-## ⚙️ Getting Started
+- **Phase 2: Offline AI/ML Bootcamp**
+  - **Dates:** September 3 - October 1, 2026 (Thursdays for 5 Weeks)
+  - **Venue:** Premier University, Academic Building #4, Hazari Lane, Kotowali, Chattogram, Bangladesh
+  - **Focus:** Machine Learning algorithms, Feature Engineering, Model Evaluation, and Deployment.
 
-To run this project locally, follow these steps:
+---
 
-### Prerequisites
+## 🚀 Learning Journey
 
-Make sure you have Node.js (version 20 or higher) installed on your machine.
+1. **Python Foundations:** Master the programming language of AI. From syntax to data structures, build the solid foundation every AI engineer needs.
+2. **Data Analysis & Visualization:** Explore and understand data like a data scientist. Clean messy datasets, uncover patterns, and tell stories with visualizations.
+3. **Machine Learning Core:** Implement supervised and unsupervised learning algorithms. Understand how models learn from data and make predictions.
+4. **Model Evaluation & Optimization:** Learn to measure model performance rigorously. Apply cross-validation, tune hyperparameters, and combat overfitting.
+5. **Deployment & Project Showcase:** Take your models from notebooks to production. Build interactive web apps and present your projects to a panel of judges.
 
-### Installation
+---
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/sisayeedcse/AIMLBootcamp.git
-   cd AIMLBootcamp
-   ```
+## 🏆 Capstone Project & AI Innovation Challenge
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   ```
+Build a complete, portfolio-ready AI application — from data ingestion and model training to a deployed web interface. Teams will present their live, deployed applications on **Demo Day (October 1)**. 
 
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
-   ```
+Awards will be given in the following categories:
+- **Best AI Project:** Most technically impressive and complete AI application.
+- **Best Innovation:** Most creative and original use of AI to solve a real-world problem.
+- **Best Deployment:** Most polished and production-ready deployed application.
+- **People's Choice:** Voted by all participants and audience members for their favorite project presentation.
 
-4. **Open the application:**
-   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-## 📁 Project Structure
+## 🎟️ Registration Details
 
-```text
-src/
-├── app/             # Next.js App Router (pages, layout, globals.css)
-├── assets/          # Static assets like images and logos
-├── components/      # Reusable React components
-│   ├── common/      # Generic components (Buttons, Loaders, ScrollReveal)
-│   ├── effects/     # Visual effects (CursorGlow, Canvas)
-│   ├── layout/      # Navbar, Footer
-│   └── sections/    # Main landing page sections (Hero, About, Schedule, etc.)
-├── lib/             # Utility functions and constants
-└── types/           # TypeScript type definitions
-```
+- **Deadline:** August 20, 2026
+- **Total Seats:** 100 
+- **Tiers:**
+  - **General Student:** BDT 400
+  - **IEEE Student Member:** BDT 300
+  - **IEEE CS Member:** BDT 250
 
-## 🤝 Contributing
+---
 
-Contributions, issues, and feature requests are welcome! 
-Feel free to check the [issues page](https://github.com/sisayeedcse/AIMLBootcamp/issues) if you want to contribute.
+## 📞 Contact Information
 
-## 📄 License
+For any queries regarding the bootcamp, feel free to reach out to us:
 
-This project is open-source and available to the public.
+- **Email:** ieeecspusbc@gmail.com
+- **Phone:** 01644238788
+- **Website:** [https://ieeepusb.org/cs](https://ieeepusb.org/cs)
+- **Facebook:** [IEEE CS PUSBC](https://www.facebook.com/IEEECS.PUSBC/)
+- **LinkedIn:** [IEEE CS PUSBC](https://www.linkedin.com/company/ieee-cs-pusbc)
+
+---
+*Empowering the next generation of AI Engineers in Bangladesh.*
