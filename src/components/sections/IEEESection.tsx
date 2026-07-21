@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Globe, BookOpen, Users, Award, ChevronRight } from 'lucide-react';
 import ScrollReveal from '@/components/common/ScrollReveal';
+import ieeeCsLogo from '@/assets/logos/ieee-cs.png';
+import chapterLogo from '@/assets/logos/ieee-cs-pu-sb-chapter.png';
 
 const CS_BENEFITS = [
   { icon: BookOpen, title: 'Digital Library', desc: 'Access to over 800,000 articles, conference papers, and magazines in computing.' },
@@ -83,12 +85,12 @@ export default function IEEESection() {
             </div>
             
             {/* Logos */}
-            <div className="mt-8 flex items-center justify-center sm:justify-start gap-8 opacity-70">
-              <div className="relative w-32 h-12">
-                <Image src="/logos/IEEE Computer Society.png" alt="IEEE CS Logo" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-contain" />
+            <div className="mt-8 flex items-center justify-center sm:justify-start gap-6 opacity-90">
+              <div className="relative w-32 h-12 bg-white rounded-md p-1 transition-transform hover:scale-105">
+                <Image src={ieeeCsLogo} alt="IEEE CS Logo" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-contain p-1" />
               </div>
-              <div className="relative w-40 h-12">
-                <Image src="/logos/IEEE Computer Society Premier University Student Branch Chapter.png" alt="PU SB Chapter Logo" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-contain" />
+              <div className="relative w-40 h-12 bg-white rounded-md p-1 transition-transform hover:scale-105">
+                <Image src={chapterLogo} alt="PU SB Chapter Logo" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-contain p-1" />
               </div>
             </div>
           </ScrollReveal>

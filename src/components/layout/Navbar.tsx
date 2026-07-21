@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronRight } from 'lucide-react';
 import { NAV_ITEMS } from '@/lib/constants';
+import chapterLogo from '@/assets/logos/ieee-cs-pu-sb-chapter.png';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -69,12 +70,12 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link href="#home" onClick={() => handleNavClick('#home')} className="flex items-center gap-3 group" aria-label="IEEE AI/ML Bootcamp 2.0 Home">
-              <div className="relative w-10 h-10 lg:w-12 lg:h-12 flex-shrink-0">
+              <div className="relative w-10 h-10 lg:w-12 lg:h-12 flex-shrink-0 bg-white rounded-md p-1">
                 <Image
-                  src="/logos/IEEE Computer Society Premier University Student Branch Chapter.png"
+                  src={chapterLogo}
                   alt="IEEE CS Premier University Student Branch Chapter"
                   fill
-                  className="object-contain"
+                  className="object-contain p-1"
                   priority
                 />
               </div>
@@ -169,13 +170,14 @@ export default function Navbar() {
               aria-label="Mobile navigation"
             >
               <div className="mb-8 flex flex-col items-center">
-                <Image
-                  src="/logos/IEEE Computer Society Premier University Student Branch Chapter.png"
-                  alt="IEEE CS Premier University SB Chapter"
-                  width={64}
-                  height={64}
-                  className="object-contain mb-3"
-                />
+                <div className="relative w-16 h-16 mb-3 bg-white rounded-md p-1">
+                  <Image
+                    src={chapterLogo}
+                    alt="IEEE CS Premier University SB Chapter"
+                    fill
+                    className="object-contain p-1"
+                  />
+                </div>
                 <p className="text-white font-bold text-lg font-display">IEEE AI/ML Bootcamp 2.0</p>
               </div>
               {NAV_ITEMS.map(({ label, href }, i) => (

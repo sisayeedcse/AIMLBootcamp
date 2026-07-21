@@ -1,11 +1,15 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { MapPin, Calendar, ChevronDown, Download, BookOpen, ArrowRight } from 'lucide-react';
 import NeuralNetworkCanvas from '@/components/effects/NeuralNetworkCanvas';
 import { EVENT } from '@/lib/constants';
+import ieeeCsLogo from '@/assets/logos/ieee-cs.png';
+import ieeePuSbLogo from '@/assets/logos/ieee-pu-sb.png';
+import premierUniversityLogo from '@/assets/logos/premier-university.jpeg';
+import chapterLogo from '@/assets/logos/ieee-cs-pu-sb-chapter.png';
 
 const TYPEWRITER_WORDS = ['Intelligence', 'Innovation', 'Deployment', 'Excellence'];
 
@@ -112,9 +116,9 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex items-center gap-3 px-4 py-2 rounded-full" style={{ background: 'rgba(255,176,0,0.1)', border: '1px solid rgba(255,176,0,0.25)' }}>
-            <div className="relative w-6 h-6">
-              <Image src="/logos/IEEE Computer Society.png" alt="IEEE CS" fill className="object-contain" />
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-8" style={{ background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(255,255,255,0.08)' }}>
+            <div className="relative w-4 h-4 bg-white rounded-sm p-0.5">
+              <Image src={ieeeCsLogo} alt="IEEE CS" fill className="object-contain p-0.5" />
             </div>
             <span className="text-xs font-semibold tracking-wider uppercase" style={{ color: '#FFB000' }}>
               IEEE Computer Society · Premier University SB Chapter
@@ -227,23 +231,27 @@ export default function HeroSection() {
 
         {/* Organizer logos */}
         <motion.div
-          className="flex flex-wrap items-center justify-center gap-6 mt-12 pt-8 border-t"
+          className="flex flex-col items-center mt-12 pt-8 border-t"
           style={{ borderColor: 'rgba(255,255,255,0.06)' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1 }}
         >
-          <p className="text-xs uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.3)' }}>Organized by</p>
-          {[
-            { src: '/logos/IEEE Computer Society.png', alt: 'IEEE Computer Society', w: 40 },
-            { src: '/logos/IEEE Premier University Student Branch.png', alt: 'IEEE PU Student Branch', w: 48 },
-            { src: '/logos/Premier University.jpeg', alt: 'Premier University', w: 40 },
-            { src: '/logos/IEEE Computer Society Premier University Student Branch Chapter.png', alt: 'IEEE CS PU SB Chapter', w: 48 },
-          ].map(({ src, alt, w }) => (
-            <div key={alt} className="relative" style={{ width: w, height: w }}>
-              <Image src={src} alt={alt} fill className="object-contain" />
+          <div className="mt-8 flex flex-col md:flex-row items-center gap-4 text-xs font-semibold tracking-wider text-[rgba(255,255,255,0.4)]">
+            <span>ORGANIZED BY</span>
+            <div className="flex items-center gap-6">
+              {[
+                { src: ieeeCsLogo, alt: 'IEEE Computer Society', w: 40 },
+                { src: ieeePuSbLogo, alt: 'IEEE PU Student Branch', w: 48 },
+                { src: premierUniversityLogo, alt: 'Premier University', w: 40, rounded: true },
+                { src: chapterLogo, alt: 'IEEE CS PU SB Chapter', w: 48 },
+              ].map((logo, i) => (
+                <div key={i} className={`relative flex items-center justify-center bg-white rounded transition-transform hover:scale-105 p-1 ${logo.rounded ? 'rounded-md' : ''}`} style={{ width: logo.w, height: 32 }}>
+                  <Image src={logo.src} alt={logo.alt} fill className={`object-contain p-1 ${logo.rounded ? 'rounded-sm' : ''}`} />
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </motion.div>
       </div>
 

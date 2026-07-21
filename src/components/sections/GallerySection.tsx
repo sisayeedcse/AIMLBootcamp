@@ -1,18 +1,27 @@
 'use client';
 
 import { useState } from 'react';
+import Image, { StaticImageData } from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ImageIcon, X } from 'lucide-react';
 import ScrollReveal from '@/components/common/ScrollReveal';
 
-// Simulated placeholders since no images were provided
+import gallery1 from '@/assets/gallery/gallery-1.jpg';
+import gallery2 from '@/assets/gallery/gallery-2.jpg';
+import gallery3 from '@/assets/gallery/gallery-3.jpg';
+import gallery4 from '@/assets/gallery/gallery-4.jpg';
+import gallery5 from '@/assets/gallery/gallery-5.jpg';
+import gallery6 from '@/assets/gallery/gallery-6.jpg';
+import gallery7 from '@/assets/gallery/gallery-7.jpg';
+
 const GALLERY_IMAGES = [
-  { id: 1, src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop', alt: 'Bootcamp 2025 Lecture', span: 'col-span-1 md:col-span-2 row-span-2' },
-  { id: 2, src: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop', alt: 'Team Collaboration', span: 'col-span-1 row-span-1' },
-  { id: 3, src: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070&auto=format&fit=crop', alt: 'Mentorship Session', span: 'col-span-1 row-span-1' },
-  { id: 4, src: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop', alt: 'Demo Day Presentations', span: 'col-span-1 md:col-span-2 row-span-1' },
-  { id: 5, src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop', alt: 'Networking Event', span: 'col-span-1 row-span-1' },
-  { id: 6, src: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop', alt: 'Awards Ceremony', span: 'col-span-1 row-span-1' },
+  { id: 1, src: gallery1, alt: 'Bootcamp 2025 Python Session', span: 'col-span-2 md:col-span-2 row-span-2' },
+  { id: 2, src: gallery2, alt: 'Machine Learning Class', span: 'col-span-1 md:col-span-1 row-span-1' },
+  { id: 3, src: gallery3, alt: 'Supervised Learning Lecture', span: 'col-span-1 md:col-span-1 row-span-1' },
+  { id: 4, src: gallery4, alt: 'Closing Ceremony', span: 'col-span-2 md:col-span-2 row-span-1' },
+  { id: 5, src: gallery5, alt: 'Group Photo with Certificates', span: 'col-span-2 md:col-span-2 row-span-2' },
+  { id: 6, src: gallery6, alt: 'Awards Distribution', span: 'col-span-2 md:col-span-2 row-span-1' },
+  { id: 7, src: gallery7, alt: 'Participants & Instructors', span: 'col-span-2 md:col-span-2 row-span-1' },
 ];
 
 export default function GallerySection() {
@@ -42,10 +51,13 @@ export default function GallerySection() {
               delay={i * 0.1} 
               className={`${img.span} relative group rounded-xl overflow-hidden cursor-pointer`}
             >
-              <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                style={{ backgroundImage: `url(${img.src})` }}
-                onClick={() => setSelectedImg({ src: img.src, alt: img.alt })}
+              <Image 
+                src={img.src} 
+                alt={img.alt} 
+                fill 
+                className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                sizes="(max-width: 768px) 100vw, 50vw"
+                onClick={() => setSelectedImg({ src: img.src.src, alt: img.alt })}
               />
               <div 
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 pointer-events-none"

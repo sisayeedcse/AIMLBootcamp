@@ -4,6 +4,10 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Mail, Phone, ExternalLink, Heart, ArrowRight } from 'lucide-react';
 import { NAV_ITEMS, EVENT } from '@/lib/constants';
+import ieeeCsLogo from '@/assets/logos/ieee-cs.png';
+import ieeePuSbLogo from '@/assets/logos/ieee-pu-sb.png';
+import premierUniversityLogo from '@/assets/logos/premier-university.jpeg';
+import chapterLogo from '@/assets/logos/ieee-cs-pu-sb-chapter.png';
 
 const SOCIAL = [
   { icon: ArrowRight, href: EVENT.contact.facebook, label: 'Facebook' },
@@ -30,11 +34,11 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="relative w-12 h-12 flex-shrink-0">
+              <div className="relative w-12 h-12 flex-shrink-0 bg-white rounded-md p-1">
                 <Image
-                  src="/logos/IEEE Computer Society Premier University Student Branch Chapter.png"
+                  src={chapterLogo}
                   alt="IEEE CS Premier University SB Chapter"
-                  fill className="object-contain"
+                  fill className="object-contain p-1"
                 />
               </div>
             </div>
@@ -122,14 +126,14 @@ export default function Footer() {
 
             {/* Partner Logos */}
             <div className="mt-6 flex flex-wrap items-center gap-3">
-              <div className="relative w-10 h-10">
-                <Image src="/logos/IEEE Computer Society.png" alt="IEEE CS" fill className="object-contain" />
+              <div className="relative w-10 h-10 bg-white rounded p-1">
+                <Image src={ieeeCsLogo} alt="IEEE CS" fill className="object-contain p-0.5" />
               </div>
-              <div className="relative w-10 h-10">
-                <Image src="/logos/Premier University.jpeg" alt="Premier University" fill className="object-contain rounded" />
+              <div className="relative w-10 h-10 bg-white rounded p-1">
+                <Image src={premierUniversityLogo} alt="Premier University" fill className="object-contain rounded-sm" />
               </div>
-              <div className="relative w-10 h-10">
-                <Image src="/logos/IEEE Premier University Student Branch.png" alt="IEEE PU SB" fill className="object-contain" />
+              <div className="relative w-10 h-10 bg-white rounded p-1">
+                <Image src={ieeePuSbLogo} alt="IEEE PU SB" fill className="object-contain p-0.5" />
               </div>
             </div>
           </div>

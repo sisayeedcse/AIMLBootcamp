@@ -2,13 +2,17 @@
 
 import Image from 'next/image';
 import ScrollReveal from '@/components/common/ScrollReveal';
+import ieeeCsLogo from '@/assets/logos/ieee-cs.png';
+import ieeePuSbLogo from '@/assets/logos/ieee-pu-sb.png';
+import premierUniversityLogo from '@/assets/logos/premier-university.jpeg';
+import chapterLogo from '@/assets/logos/ieee-cs-pu-sb-chapter.png';
 
 export default function SponsorsSection() {
   const sponsors = [
-    { src: '/logos/IEEE Computer Society.png', alt: 'IEEE Computer Society', width: 220 },
-    { src: '/logos/Premier University.jpeg', alt: 'Premier University', width: 120, rounded: true },
-    { src: '/logos/IEEE Premier University Student Branch.png', alt: 'IEEE PU SB', width: 200 },
-    { src: '/logos/IEEE Computer Society Premier University Student Branch Chapter.png', alt: 'IEEE CS PU SB Chapter', width: 220 },
+    { src: ieeeCsLogo, alt: 'IEEE Computer Society', width: 220, padding: 'p-4' },
+    { src: premierUniversityLogo, alt: 'Premier University', width: 120, rounded: true, padding: 'p-2' },
+    { src: ieeePuSbLogo, alt: 'IEEE PU SB', width: 200, padding: 'p-4' },
+    { src: chapterLogo, alt: 'IEEE CS PU SB Chapter', width: 220, padding: 'p-4' },
   ];
 
   return (
@@ -24,7 +28,7 @@ export default function SponsorsSection() {
           {sponsors.map((sponsor, i) => (
             <ScrollReveal key={sponsor.alt} delay={i * 0.1}>
               <div 
-                className="relative flex items-center justify-center filter grayscale hover:grayscale-0 transition-all duration-300"
+                className={`relative flex items-center justify-center bg-white rounded-xl ${sponsor.padding} transition-all duration-300 hover:scale-105`}
                 style={{ width: sponsor.width, height: 80 }}
               >
                 <Image 
@@ -32,7 +36,7 @@ export default function SponsorsSection() {
                   alt={sponsor.alt} 
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className={`object-contain ${sponsor.rounded ? 'rounded-lg' : ''}`}
+                  className={`object-contain ${sponsor.padding} ${sponsor.rounded ? 'rounded-lg' : ''}`}
                 />
               </div>
             </ScrollReveal>
