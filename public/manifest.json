@@ -1,0 +1,16 @@
+{
+  "name": "IEEE AI/ML Bootcamp 2.0",
+  "short_name": "AI/ML Bootcamp",
+  "description": "IEEE AI/ML Bootcamp 2.0 – From Fundamentals to Real-World Applications",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050508",
+  "theme_color": "#FFB000",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
