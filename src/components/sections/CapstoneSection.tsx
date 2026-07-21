@@ -34,7 +34,7 @@ export default function CapstoneSection() {
             Build Something <span className="gradient-text">Real</span>
           </h2>
           <p className="text-base md:text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.6)' }}>
-            The capstone project is the culmination of the bootcamp. Over 10 days, you and your team will design, build, and deploy a complete AI application — a live, working product you&apos;re proud to show the world.
+            The capstone project is the culmination of the bootcamp. Over 5 weeks, you and your team will design, build, and deploy a complete AI application — a live, working product you&apos;re proud to show the world.
           </p>
         </ScrollReveal>
 

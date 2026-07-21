@@ -24,23 +24,25 @@ export default function SponsorsSection() {
           </p>
         </ScrollReveal>
         
-        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-80 hover:opacity-100 transition-opacity duration-500">
-          {sponsors.map((sponsor, i) => (
-            <ScrollReveal key={sponsor.alt} delay={i * 0.1}>
-              <div 
-                className={`relative flex items-center justify-center bg-white rounded-xl ${sponsor.padding} transition-all duration-300 hover:scale-105`}
-                style={{ width: sponsor.width, height: 80 }}
-              >
-                <Image 
-                  src={sponsor.src} 
-                  alt={sponsor.alt} 
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className={`object-contain ${sponsor.padding} ${sponsor.rounded ? 'rounded-lg' : ''}`}
-                />
-              </div>
-            </ScrollReveal>
-          ))}
+        <div className="flex justify-center mt-8">
+          <div className="inline-flex flex-wrap justify-center items-center gap-12 md:gap-20 bg-white/95 border border-white/20 rounded-[3rem] px-12 py-8 shadow-2xl ring-1 ring-black/5">
+            {sponsors.map((sponsor, i) => (
+              <ScrollReveal key={sponsor.alt} delay={i * 0.1}>
+                <div 
+                  className="relative flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+                  style={{ width: sponsor.width, height: 80 }}
+                >
+                  <Image 
+                    src={sponsor.src} 
+                    alt={sponsor.alt} 
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300 drop-shadow-md mix-blend-multiply"
+                  />
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>

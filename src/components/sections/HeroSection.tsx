@@ -57,7 +57,7 @@ function TypewriterText() {
 
 const HERO_CHIPS = [
   { label: 'Premier University, Chattogram', icon: MapPin },
-  { label: 'Aug 25 – Sep 7, 2026', icon: Calendar },
+  { label: 'Aug 25 – Oct 1, 2026', icon: Calendar },
 ];
 
 const CTA_ACTIONS = [
@@ -213,7 +213,7 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.8 }}
         >
           {[
-            { value: '10', label: 'Days of Training' },
+            { value: '5', label: 'Weeks of Training' },
             { value: '100+', label: 'Participants' },
             { value: '5', label: 'Learning Stages' },
             { value: '100%', label: 'Hands-On' },
@@ -231,23 +231,22 @@ export default function HeroSection() {
 
         {/* Organizer logos */}
         <motion.div
-          className="flex flex-col items-center mt-12 pt-8 border-t"
-          style={{ borderColor: 'rgba(255,255,255,0.06)' }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          className="flex justify-center mt-12 pt-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1 }}
         >
-          <div className="mt-8 flex flex-col md:flex-row items-center gap-4 text-xs font-semibold tracking-wider text-[rgba(255,255,255,0.4)]">
-            <span>ORGANIZED BY</span>
-            <div className="flex items-center gap-6">
+          <div className="inline-flex flex-col md:flex-row items-center gap-6 p-5 md:p-3 md:pl-8 bg-white/95 border border-white/20 rounded-3xl md:rounded-full backdrop-blur-md shadow-2xl ring-1 ring-black/5">
+            <span className="text-xs font-extrabold tracking-widest text-slate-400 uppercase">Organized By</span>
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-6 md:pr-4">
               {[
-                { src: ieeeCsLogo, alt: 'IEEE Computer Society', w: 40 },
-                { src: ieeePuSbLogo, alt: 'IEEE PU Student Branch', w: 48 },
-                { src: premierUniversityLogo, alt: 'Premier University', w: 40, rounded: true },
-                { src: chapterLogo, alt: 'IEEE CS PU SB Chapter', w: 48 },
+                { src: ieeeCsLogo, alt: 'IEEE Computer Society', w: 50 },
+                { src: ieeePuSbLogo, alt: 'IEEE PU Student Branch', w: 60 },
+                { src: premierUniversityLogo, alt: 'Premier University', w: 50 },
+                { src: chapterLogo, alt: 'IEEE CS PU SB Chapter', w: 60 },
               ].map((logo, i) => (
-                <div key={i} className={`relative flex items-center justify-center bg-white rounded transition-transform hover:scale-105 p-1 ${logo.rounded ? 'rounded-md' : ''}`} style={{ width: logo.w, height: 32 }}>
-                  <Image src={logo.src} alt={logo.alt} fill className={`object-contain p-1 ${logo.rounded ? 'rounded-sm' : ''}`} />
+                <div key={i} className="relative transition-all duration-300 hover:scale-110 hover:-translate-y-1" style={{ width: logo.w, height: 35 }}>
+                  <Image src={logo.src} alt={logo.alt} fill className="object-contain transition-all duration-300 drop-shadow-sm mix-blend-multiply" />
                 </div>
               ))}
             </div>

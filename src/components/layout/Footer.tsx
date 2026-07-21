@@ -9,10 +9,24 @@ import ieeePuSbLogo from '@/assets/logos/ieee-pu-sb.png';
 import premierUniversityLogo from '@/assets/logos/premier-university.jpeg';
 import chapterLogo from '@/assets/logos/ieee-cs-pu-sb-chapter.png';
 
+const FacebookIcon = (props: any) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+);
+const LinkedinIcon = (props: any) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+);
+const YoutubeIcon = (props: any) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+);
+const InstagramIcon = (props: any) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+);
+
 const SOCIAL = [
-  { icon: ArrowRight, href: EVENT.contact.facebook, label: 'Facebook' },
-  { icon: ArrowRight, href: EVENT.contact.linkedin, label: 'LinkedIn' },
-  { icon: ArrowRight, href: EVENT.contact.youtube, label: 'YouTube' },
+  { icon: FacebookIcon, href: EVENT.contact.facebook, label: 'Facebook' },
+  { icon: LinkedinIcon, href: EVENT.contact.linkedin, label: 'LinkedIn' },
+  { icon: YoutubeIcon, href: EVENT.contact.youtube, label: 'YouTube' },
+  { icon: InstagramIcon, href: EVENT.contact.instagram, label: 'Instagram' },
 ];
 
 const QUICK_LINKS_1 = NAV_ITEMS.slice(0, 5);
@@ -34,11 +48,11 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="relative w-12 h-12 flex-shrink-0 bg-white rounded-md p-1">
+              <div className="relative w-16 h-16 flex-shrink-0">
                 <Image
                   src={chapterLogo}
                   alt="IEEE CS Premier University SB Chapter"
-                  fill className="object-contain p-1"
+                  fill className="object-contain p-1 brightness-0 invert"
                 />
               </div>
             </div>
@@ -125,15 +139,15 @@ export default function Footer() {
             </ul>
 
             {/* Partner Logos */}
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <div className="relative w-10 h-10 bg-white rounded p-1">
-                <Image src={ieeeCsLogo} alt="IEEE CS" fill className="object-contain p-0.5" />
+            <div className="mt-6 flex flex-wrap items-center gap-6 bg-white/95 border border-white/20 rounded-full px-6 py-3 shadow-lg w-fit">
+              <div className="relative w-12 h-12">
+                <Image src={ieeeCsLogo} alt="IEEE CS" fill className="object-contain mix-blend-multiply" />
               </div>
-              <div className="relative w-10 h-10 bg-white rounded p-1">
-                <Image src={premierUniversityLogo} alt="Premier University" fill className="object-contain rounded-sm" />
+              <div className="relative w-12 h-12">
+                <Image src={premierUniversityLogo} alt="Premier University" fill className="object-contain mix-blend-multiply" />
               </div>
-              <div className="relative w-10 h-10 bg-white rounded p-1">
-                <Image src={ieeePuSbLogo} alt="IEEE PU SB" fill className="object-contain p-0.5" />
+              <div className="relative w-12 h-12">
+                <Image src={ieeePuSbLogo} alt="IEEE PU SB" fill className="object-contain mix-blend-multiply" />
               </div>
             </div>
           </div>

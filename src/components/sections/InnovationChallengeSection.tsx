@@ -44,8 +44,8 @@ export default function InnovationChallengeSection() {
                 <ul className="space-y-3 text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>
                   <li>• Teams of 2–4 students per group</li>
                   <li>• Each team selects a unique real-world problem domain</li>
-                  <li>• Development spans the full 10-day bootcamp</li>
-                  <li>• Final presentations on Demo Day (September 7)</li>
+                  <li>• Development spans the full 5-week bootcamp</li>
+                  <li>🌟 Final presentations on Demo Day (October 1)</li>
                   <li>• Audience and peer voting for People&apos;s Choice Award</li>
                 </ul>
               </div>

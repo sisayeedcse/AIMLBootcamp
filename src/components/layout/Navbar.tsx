@@ -70,12 +70,12 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link href="#home" onClick={() => handleNavClick('#home')} className="flex items-center gap-3 group" aria-label="IEEE AI/ML Bootcamp 2.0 Home">
-              <div className="relative w-10 h-10 lg:w-12 lg:h-12 flex-shrink-0 bg-white rounded-md p-1">
+              <div className="relative w-12 h-12 lg:w-14 lg:h-14 flex-shrink-0">
                 <Image
                   src={chapterLogo}
                   alt="IEEE CS Premier University Student Branch Chapter"
                   fill
-                  className="object-contain p-1"
+                  className="object-contain p-1 brightness-0 invert"
                   priority
                 />
               </div>
@@ -170,12 +170,12 @@ export default function Navbar() {
               aria-label="Mobile navigation"
             >
               <div className="mb-8 flex flex-col items-center">
-                <div className="relative w-16 h-16 mb-3 bg-white rounded-md p-1">
+                <div className="relative w-20 h-20 mb-3">
                   <Image
                     src={chapterLogo}
                     alt="IEEE CS Premier University SB Chapter"
                     fill
-                    className="object-contain p-1"
+                    className="object-contain p-1 brightness-0 invert"
                   />
                 </div>
                 <p className="text-white font-bold text-lg font-display">IEEE AI/ML Bootcamp 2.0</p>

@@ -22,7 +22,7 @@ export default function WhyJoinSection() {
             <span className="gradient-text">Level Up</span>
           </h2>
           <p className="text-base md:text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.6)' }}>
-            From beginner to AI engineer in 10 days — with mentorship, hands-on labs, networking, and a portfolio project to show for it.
+            From beginner to AI engineer in 5 weeks — with mentorship, hands-on labs, networking, and a portfolio project to show for it.
           </p>
         </ScrollReveal>
 
