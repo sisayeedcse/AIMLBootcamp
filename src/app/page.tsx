@@ -41,11 +41,11 @@ export default function Home() {
         <CapstoneSection />
         <InnovationChallengeSection />
         <BenefitsSection />
-        <IEEESection />
+        <GallerySection />
         <RegistrationSection />
         <FAQSection />
         <OrganizersSection />
-        <GallerySection />
+        <IEEESection />
         <TestimonialsSection />
         <ContactSection />
       </main>
