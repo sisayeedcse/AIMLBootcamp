@@ -4,9 +4,6 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Mail, Phone, ExternalLink, Heart, ArrowRight } from 'lucide-react';
 import { NAV_ITEMS, EVENT } from '@/lib/constants';
-import ieeeCsLogo from '@/assets/logos/ieee-cs.png';
-import ieeePuSbLogo from '@/assets/logos/ieee-pu-sb.png';
-import premierUniversityLogo from '@/assets/logos/premier-university.jpeg';
 import chapterLogo from '@/assets/logos/ieee-cs-pu-sb-chapter.png';
 
 const FacebookIcon = (props: any) => (
@@ -48,11 +45,11 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="relative w-16 h-16 flex-shrink-0">
+              <div className="relative w-32 h-14 flex-shrink-0 bg-white/95 rounded-lg p-2 shadow-md">
                 <Image
                   src={chapterLogo}
-                  alt="IEEE CS Premier University SB Chapter"
-                  fill className="object-contain p-1 brightness-0 invert"
+                  alt="IEEE CS PU SB Chapter"
+                  fill className="object-contain p-1 mix-blend-multiply"
                 />
               </div>
             </div>
@@ -137,19 +134,6 @@ export default function Footer() {
                 <span className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>{EVENT.contact.phone}</span>
               </li>
             </ul>
-
-            {/* Partner Logos */}
-            <div className="mt-6 flex flex-wrap items-center gap-6 bg-white/95 border border-white/20 rounded-full px-6 py-3 shadow-lg w-fit">
-              <div className="relative w-12 h-12">
-                <Image src={ieeeCsLogo} alt="IEEE CS" fill className="object-contain mix-blend-multiply" />
-              </div>
-              <div className="relative w-12 h-12">
-                <Image src={premierUniversityLogo} alt="Premier University" fill className="object-contain mix-blend-multiply" />
-              </div>
-              <div className="relative w-12 h-12">
-                <Image src={ieeePuSbLogo} alt="IEEE PU SB" fill className="object-contain mix-blend-multiply" />
-              </div>
-            </div>
           </div>
         </div>
 

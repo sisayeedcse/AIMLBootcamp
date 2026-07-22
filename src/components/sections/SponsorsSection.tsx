@@ -4,7 +4,7 @@ import Image from 'next/image';
 import ScrollReveal from '@/components/common/ScrollReveal';
 import ieeeCsLogo from '@/assets/logos/ieee-cs.png';
 import ieeePuSbLogo from '@/assets/logos/ieee-pu-sb.png';
-import premierUniversityLogo from '@/assets/logos/premier-university.jpeg';
+import premierUniversityLogo from '@/assets/logos/premier-university.png';
 import chapterLogo from '@/assets/logos/ieee-cs-pu-sb-chapter.png';
 
 export default function SponsorsSection() {

@@ -106,28 +106,6 @@ export default function RegistrationSection() {
             <CountdownTimer deadline={EVENT.registration.deadline} />
           </div>
 
-          {/* Seats Progress */}
-          <div className="max-w-md mx-auto bg-[#0A0A12] p-4 rounded-xl border" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
-            <div className="flex justify-between items-center mb-2 text-sm">
-              <span className="flex items-center gap-2 font-medium text-white">
-                <Users className="w-4 h-4 text-[#FFB000]" /> Seats Available
-              </span>
-              <span className="font-bold" style={{ color: '#FFB000' }}>
-                {EVENT.registration.seatsLeft} <span className="font-normal text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>/ {EVENT.registration.totalSeats}</span>
-              </span>
-            </div>
-            <div className="h-2 w-full bg-gray-800 rounded-full overflow-hidden">
-              <motion.div 
-                className="h-full rounded-full"
-                style={{ background: 'linear-gradient(90deg, #FFB000, #FF8C00)' }}
-                initial={{ width: 0 }}
-                whileInView={{ width: `${progressPercentage}%` }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.5, ease: "easeOut" }}
-              />
-            </div>
-            <p className="text-xs text-center mt-3" style={{ color: 'rgba(255,255,255,0.4)' }}>First come, first served basis.</p>
-          </div>
         </ScrollReveal>
 
         {/* Pricing Cards */}

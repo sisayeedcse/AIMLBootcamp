@@ -13,7 +13,7 @@ import BenefitsSection from '@/components/sections/BenefitsSection';
 import IEEESection from '@/components/sections/IEEESection';
 import RegistrationSection from '@/components/sections/RegistrationSection';
 import FAQSection from '@/components/sections/FAQSection';
-import SponsorsSection from '@/components/sections/SponsorsSection';
+import OrganizersSection from '@/components/sections/OrganizersSection';
 import GallerySection from '@/components/sections/GallerySection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import ContactSection from '@/components/sections/ContactSection';
@@ -44,7 +44,7 @@ export default function Home() {
         <IEEESection />
         <RegistrationSection />
         <FAQSection />
-        <SponsorsSection />
+        <OrganizersSection />
         <GallerySection />
         <TestimonialsSection />
         <ContactSection />

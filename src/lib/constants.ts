@@ -20,7 +20,6 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'About', href: '#about' },
   { label: 'Curriculum', href: '#curriculum' },
   { label: 'Schedule', href: '#schedule' },
-  { label: 'Speakers', href: '#speakers' },
   { label: 'Projects', href: '#capstone' },
   { label: 'Registration', href: '#registration' },
   { label: 'FAQ', href: '#faq' },
@@ -450,17 +449,17 @@ export const SCHEDULE: ScheduleDay[] = [
 // TECHNOLOGY STACK
 // ─────────────────────────────────────────────
 export const TECH_STACK: TechItem[] = [
-  { name: 'Python', category: 'Language', color: '#3776AB', description: 'The primary language of AI, data science, and machine learning.' },
-  { name: 'NumPy', category: 'Data', color: '#013243', description: 'Fundamental array computing library for scientific computation.' },
-  { name: 'Pandas', category: 'Data', color: '#150458', description: 'Powerful data manipulation and analysis library for structured data.' },
-  { name: 'Matplotlib', category: 'Visualization', color: '#11557C', description: 'Comprehensive library for creating static and interactive visualizations.' },
+  { name: 'Python', category: 'Language', color: '#4B8BBE', description: 'The primary language of AI, data science, and machine learning.' },
+  { name: 'NumPy', category: 'Data', color: '#4DABCF', description: 'Fundamental array computing library for scientific computation.' },
+  { name: 'Pandas', category: 'Data', color: '#E70488', description: 'Powerful data manipulation and analysis library for structured data.' },
+  { name: 'Matplotlib', category: 'Visualization', color: '#5CA4D1', description: 'Comprehensive library for creating static and interactive visualizations.' },
   { name: 'Seaborn', category: 'Visualization', color: '#4C72B0', description: 'Statistical data visualization built on top of Matplotlib.' },
   { name: 'Scikit-learn', category: 'ML', color: '#F7931E', description: 'Industry-standard machine learning library with rich algorithm support.' },
   { name: 'Streamlit', category: 'Deployment', color: '#FF4B4B', description: 'Rapidly build and deploy interactive ML applications in pure Python.' },
-  { name: 'Joblib', category: 'ML', color: '#2C7BB6', description: 'Efficient model serialization and parallel computation for large datasets.' },
+  { name: 'Joblib', category: 'ML', color: '#4BA1E3', description: 'Efficient model serialization and parallel computation for large datasets.' },
   { name: 'Git', category: 'Tools', color: '#F05032', description: 'Industry-standard version control system for collaborative development.' },
-  { name: 'GitHub', category: 'Tools', color: '#181717', description: 'Cloud-based platform for version control, CI/CD, and project showcasing.' },
-  { name: 'VS Code', category: 'Tools', color: '#007ACC', description: 'Professional code editor with powerful AI and Python extensions.' },
+  { name: 'GitHub', category: 'Tools', color: '#ffffff', description: 'Cloud-based platform for version control, CI/CD, and project showcasing.' },
+  { name: 'VS Code', category: 'Tools', color: '#3399FF', description: 'Professional code editor with powerful AI and Python extensions.' },
   { name: 'Google Colab', category: 'Tools', color: '#F9AB00', description: 'Free cloud GPU/TPU environment for running ML notebooks online.' },
 ];
 
@@ -502,7 +501,6 @@ export const REGISTRATION_TIERS: RegistrationTier[] = [
     price: 300,
     currency: 'BDT',
     highlighted: true,
-    badge: 'Most Popular',
     features: [
       'Everything in General Student',
       'IEEE Student Branch discount (BDT 100 off)',
@@ -520,7 +518,6 @@ export const REGISTRATION_TIERS: RegistrationTier[] = [
     subtitle: 'IEEE Computer Society Members',
     price: 250,
     currency: 'BDT',
-    badge: 'Best Value',
     features: [
       'Everything in IEEE Student Member',
       'IEEE CS Member exclusive discount (BDT 150 off)',

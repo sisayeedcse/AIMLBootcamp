@@ -4,27 +4,27 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import ScrollReveal from '@/components/common/ScrollReveal';
 import { TECH_STACK } from '@/lib/constants';
+import { Terminal, Calculator, Table, LineChart, Palette, Brain, MonitorPlay, Save, GitBranch, GitPullRequest, Code, Cloud } from 'lucide-react';
 
 const CATEGORIES = ['All', 'Language', 'Data', 'Visualization', 'ML', 'Deployment', 'Tools'];
 
-const TECH_ICONS: Record<string, string> = {
-  Python: '🐍',
-  NumPy: '🔢',
-  Pandas: '🐼',
-  Matplotlib: '📊',
-  Seaborn: '🎨',
-  'Scikit-learn': '🤖',
-  Streamlit: '⚡',
-  Joblib: '💾',
-  Git: '🔧',
-  GitHub: '🐙',
-  'VS Code': '💻',
-  'Google Colab': '☁️',
+const TECH_ICONS: Record<string, any> = {
+  Python: Terminal,
+  NumPy: Calculator,
+  Pandas: Table,
+  Matplotlib: LineChart,
+  Seaborn: Palette,
+  'Scikit-learn': Brain,
+  Streamlit: MonitorPlay,
+  Joblib: Save,
+  Git: GitBranch,
+  GitHub: GitPullRequest,
+  'VS Code': Code,
+  'Google Colab': Cloud,
 };
 
 export default function TechStackSection() {
   const [activeCategory, setActiveCategory] = useState('All');
-  const [hoveredTech, setHoveredTech] = useState<string | null>(null);
 
   const filtered =
     activeCategory === 'All'
@@ -37,7 +37,7 @@ export default function TechStackSection() {
         <div className="absolute left-0 bottom-0 w-[500px] h-[300px]" style={{ background: 'radial-gradient(ellipse at bottom left, rgba(255,176,0,0.04) 0%, transparent 70%)' }} />
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="text-center mb-16">
           <div className="section-label mx-auto mb-6">Technology Stack</div>
           <h2 className="font-display font-bold text-4xl md:text-5xl text-white mb-5">
@@ -67,46 +67,32 @@ export default function TechStackSection() {
         </ScrollReveal>
 
         {/* Tech grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          {filtered.map((tech, i) => (
-            <ScrollReveal key={tech.name} delay={i * 0.05}>
-              <motion.div
-                className="glass-card p-5 text-center cursor-default relative overflow-hidden"
-                onHoverStart={() => setHoveredTech(tech.name)}
-                onHoverEnd={() => setHoveredTech(null)}
-                whileHover={{ scale: 1.04, y: -4 }}
-              >
-                {/* Color accent */}
-                <div
-                  className="absolute top-0 left-0 right-0 h-0.5"
-                  style={{ background: `linear-gradient(90deg, transparent, ${tech.color}, transparent)` }}
-                />
-                <div className="text-3xl mb-3">{TECH_ICONS[tech.name] || '🔬'}</div>
-                <p className="font-bold text-white text-sm">{tech.name}</p>
-                <span
-                  className="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] font-semibold"
-                  style={{ background: `${tech.color}18`, color: tech.color }}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          {filtered.map((tech, i) => {
+            const Icon = TECH_ICONS[tech.name];
+            return (
+              <ScrollReveal key={tech.name} delay={i * 0.05} direction="up">
+                <motion.div
+                  className="glass-card p-6 h-full cursor-default relative overflow-hidden group"
+                  whileHover={{ y: -5 }}
                 >
-                  {tech.category}
-                </span>
-
-                {/* Hover tooltip */}
-                {hoveredTech === tech.name && (
-                  <motion.div
-                    className="absolute inset-0 flex items-center justify-center p-3 rounded-xl"
-                    style={{ background: 'rgba(5,5,8,0.92)', backdropFilter: 'blur(8px)' }}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.2 }}
+                  <div className="absolute top-0 right-0 w-32 h-32 blur-[40px] opacity-20 group-hover:opacity-40 transition-opacity" style={{ background: tech.color }} />
+                  
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 relative z-10"
+                    style={{ background: `${tech.color}15`, border: `1px solid ${tech.color}30` }}
                   >
-                    <p className="text-xs leading-relaxed text-center" style={{ color: 'rgba(255,255,255,0.75)' }}>
-                      {tech.description}
-                    </p>
-                  </motion.div>
-                )}
-              </motion.div>
-            </ScrollReveal>
-          ))}
+                    {Icon && <Icon className="w-6 h-6" style={{ color: tech.color }} />}
+                  </div>
+                  
+                  <h3 className="font-bold text-white text-lg mb-3 relative z-10">{tech.name}</h3>
+                  <p className="text-sm leading-relaxed relative z-10" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                    {tech.description}
+                  </p>
+                </motion.div>
+              </ScrollReveal>
+            );
+          })}
         </div>
       </div>
     </section>

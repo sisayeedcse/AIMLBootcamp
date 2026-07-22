@@ -8,7 +8,7 @@ import NeuralNetworkCanvas from '@/components/effects/NeuralNetworkCanvas';
 import { EVENT } from '@/lib/constants';
 import ieeeCsLogo from '@/assets/logos/ieee-cs.png';
 import ieeePuSbLogo from '@/assets/logos/ieee-pu-sb.png';
-import premierUniversityLogo from '@/assets/logos/premier-university.jpeg';
+import premierUniversityLogo from '@/assets/logos/premier-university.png';
 import chapterLogo from '@/assets/logos/ieee-cs-pu-sb-chapter.png';
 
 const TYPEWRITER_WORDS = ['Intelligence', 'Innovation', 'Deployment', 'Excellence'];
@@ -117,9 +117,6 @@ export default function HeroSection() {
           transition={{ duration: 0.6 }}
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-8" style={{ background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(255,255,255,0.08)' }}>
-            <div className="relative w-4 h-4 bg-white rounded-sm p-0.5">
-              <Image src={ieeeCsLogo} alt="IEEE CS" fill className="object-contain p-0.5" />
-            </div>
             <span className="text-xs font-semibold tracking-wider uppercase" style={{ color: '#FFB000' }}>
               IEEE Computer Society · Premier University SB Chapter
             </span>
@@ -229,29 +226,7 @@ export default function HeroSection() {
           ))}
         </motion.div>
 
-        {/* Organizer logos */}
-        <motion.div
-          className="flex justify-center mt-12 pt-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1 }}
-        >
-          <div className="inline-flex flex-col md:flex-row items-center gap-6 p-5 md:p-3 md:pl-8 bg-white/95 border border-white/20 rounded-3xl md:rounded-full backdrop-blur-md shadow-2xl ring-1 ring-black/5">
-            <span className="text-xs font-extrabold tracking-widest text-slate-400 uppercase">Organized By</span>
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-6 md:pr-4">
-              {[
-                { src: ieeeCsLogo, alt: 'IEEE Computer Society', w: 50 },
-                { src: ieeePuSbLogo, alt: 'IEEE PU Student Branch', w: 60 },
-                { src: premierUniversityLogo, alt: 'Premier University', w: 50 },
-                { src: chapterLogo, alt: 'IEEE CS PU SB Chapter', w: 60 },
-              ].map((logo, i) => (
-                <div key={i} className="relative transition-all duration-300 hover:scale-110 hover:-translate-y-1" style={{ width: logo.w, height: 35 }}>
-                  <Image src={logo.src} alt={logo.alt} fill className="object-contain transition-all duration-300 drop-shadow-sm mix-blend-multiply" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
+        {/* Organizer logos removed from Hero */}
       </div>
 
       {/* Scroll indicator */}
