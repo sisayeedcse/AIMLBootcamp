@@ -46,21 +46,21 @@ export const EVENT = {
   dates: {
     online: {
       label: 'Online Python Foundation',
-      start: 'August 25, 2026',
-      end: 'August 27, 2026',
-      range: 'August 25–27, 2026',
+      start: 'TBA',
+      end: 'TBA',
+      range: 'TBA',
     },
     offline: {
       label: 'Offline AI/ML Bootcamp',
-      start: 'September 3, 2026',
-      end: 'October 1, 2026',
-      range: 'September 3 - October 1, 2026',
+      start: 'TBA',
+      end: 'TBA',
+      range: 'TBA',
     },
   },
   registration: {
-    deadline: '2026-08-20T23:59:59+06:00',
+    deadline: '2030-01-01T00:00:00+06:00',
     totalSeats: 100,
-    seatsLeft: 68,
+    seatsLeft: 100,
   },
   contact: {
     email: 'ieeecspusbc@gmail.com',
@@ -212,11 +212,11 @@ export const CURRICULUM: CurriculumPhase[] = [
   {
     phase: 'Phase 1 – Online Python Foundation',
     type: 'online',
-    dates: 'August 25–27, 2026 (3 Days, Online)',
+    dates: 'TBA (3 Days, Online)',
     modules: [
       {
         title: 'Python Essentials',
-        duration: 'Day 1 – August 25',
+        duration: 'Day 1 - TBA',
         topics: [
           'Introduction to Python programming language',
           'Variables, data types, and operators',
@@ -231,7 +231,7 @@ export const CURRICULUM: CurriculumPhase[] = [
       },
       {
         title: 'Python for Data Science',
-        duration: 'Day 2 – August 26',
+        duration: 'Day 2 - TBA',
         topics: [
           'NumPy: arrays, broadcasting, and linear algebra basics',
           'Pandas: DataFrames, Series, and data wrangling',
@@ -246,7 +246,7 @@ export const CURRICULUM: CurriculumPhase[] = [
       },
       {
         title: 'Python Project Preparation',
-        duration: 'Day 3 – August 27',
+        duration: 'Day 3 - TBA',
         topics: [
           'Introduction to Git and GitHub for version control',
           'Setting up Google Colab and VS Code for AI development',
@@ -264,11 +264,11 @@ export const CURRICULUM: CurriculumPhase[] = [
   {
     phase: 'Phase 2 – Offline AI/ML Bootcamp',
     type: 'offline',
-    dates: 'Thursdays, Sept 3 - Oct 1, 2026 (5 Weeks, Offline at Premier University)',
+    dates: 'TBA (5 Weeks, Offline at Premier University)',
     modules: [
       {
         title: 'Introduction to Artificial Intelligence & ML',
-        duration: 'Day 1 – September 3',
+        duration: 'Day 1 - TBA',
         topics: [
           'History and landscape of Artificial Intelligence',
           'Types of ML: supervised, unsupervised, reinforcement learning',
@@ -283,7 +283,7 @@ export const CURRICULUM: CurriculumPhase[] = [
       },
       {
         title: 'Feature Engineering & Data Preprocessing',
-        duration: 'Day 2 - September 10',
+        duration: 'Day 2 - TBA',
         topics: [
           'Feature selection techniques: filter, wrapper, and embedded methods',
           'Encoding categorical variables: Label, One-Hot, Target Encoding',
@@ -298,7 +298,7 @@ export const CURRICULUM: CurriculumPhase[] = [
       },
       {
         title: 'Classification & Regression Algorithms',
-        duration: 'Day 3 - September 17',
+        duration: 'Day 3 - TBA',
         topics: [
           'Logistic Regression and Decision Trees',
           'Random Forest and Ensemble Methods (Bagging, Boosting)',
@@ -313,7 +313,7 @@ export const CURRICULUM: CurriculumPhase[] = [
       },
       {
         title: 'Model Evaluation, Tuning & Deployment',
-        duration: 'Day 4 - September 24',
+        duration: 'Day 4 - TBA',
         topics: [
           'Evaluation metrics: Accuracy, Precision, Recall, F1-Score, ROC-AUC',
           'Cross-validation strategies and the confusion matrix',
@@ -328,7 +328,7 @@ export const CURRICULUM: CurriculumPhase[] = [
       },
       {
         title: 'Capstone Demo Day & Project Showcase',
-        duration: 'Day 5 - October 1',
+        duration: 'Day 5 - TBA',
         topics: [
           'Final team project presentations to a panel of judges',
           'Live demonstration of deployed AI applications',
@@ -351,96 +351,96 @@ export const CURRICULUM: CurriculumPhase[] = [
 export const SCHEDULE: ScheduleDay[] = [
   {
     day: 1,
-    date: 'August 25, 2026',
+    date: 'TBA',
     type: 'online',
     title: 'Python Essentials',
     sessions: [
-      { time: '20:00 - 20:30', topic: 'Opening & Orientation', instructor: 'Bootcamp Team', type: 'keynote', outcome: 'Understand Bootcamp structure' },
-      { time: '20:30 - 21:30', topic: 'Python Syntax, Variables & Control Flow', instructor: 'TBA', type: 'lecture', outcome: 'Write basic Python programs' },
-      { time: '21:30 - 22:15', topic: 'Functions, OOP & Modules', instructor: 'TBA', type: 'lab', outcome: 'Build modular Python code' },
-      { time: '22:15 - 22:45', topic: 'Lab: Coding Challenges', instructor: 'TBA', type: 'lab', outcome: 'Solve real Python problems' },
-      { time: '22:45 - 23:00', topic: 'Q&A & Wrap-up', instructor: 'Bootcamp Team', type: 'keynote', outcome: 'Address doubts and review' },
+      { time: 'TBA', topic: 'Opening & Orientation', instructor: 'Bootcamp Team', type: 'keynote', outcome: 'Understand Bootcamp structure' },
+      { time: 'TBA', topic: 'Python Syntax, Variables & Control Flow', instructor: 'TBA', type: 'lecture', outcome: 'Write basic Python programs' },
+      { time: 'TBA', topic: 'Functions, OOP & Modules', instructor: 'TBA', type: 'lab', outcome: 'Build modular Python code' },
+      { time: 'TBA', topic: 'Lab: Coding Challenges', instructor: 'TBA', type: 'lab', outcome: 'Solve real Python problems' },
+      { time: 'TBA', topic: 'Q&A & Wrap-up', instructor: 'Bootcamp Team', type: 'keynote', outcome: 'Address doubts and review' },
     ],
   },
   {
     day: 2,
-    date: 'August 26, 2026',
+    date: 'TBA',
     type: 'online',
     title: 'Python for Data Science',
     sessions: [
-      { time: '20:00 - 21:00', topic: 'NumPy & Pandas Deep Dive', instructor: 'TBA', type: 'lecture', outcome: 'Manipulate arrays and DataFrames' },
-      { time: '21:00 - 22:00', topic: 'Data Visualization with Matplotlib & Seaborn', instructor: 'TBA', type: 'lecture', outcome: 'Create insightful charts' },
-      { time: '22:00 - 22:45', topic: 'Lab: Exploratory Data Analysis (EDA)', instructor: 'TBA', type: 'lab', outcome: 'Complete EDA on a real dataset' },
-      { time: '22:45 - 23:00', topic: 'Dataset Analysis Q&A', instructor: 'TBA', type: 'keynote', outcome: 'Reinforce EDA skills' },
+      { time: 'TBA', topic: 'NumPy & Pandas Deep Dive', instructor: 'TBA', type: 'lecture', outcome: 'Manipulate arrays and DataFrames' },
+      { time: 'TBA', topic: 'Data Visualization with Matplotlib & Seaborn', instructor: 'TBA', type: 'lecture', outcome: 'Create insightful charts' },
+      { time: 'TBA', topic: 'Lab: Exploratory Data Analysis (EDA)', instructor: 'TBA', type: 'lab', outcome: 'Complete EDA on a real dataset' },
+      { time: 'TBA', topic: 'Dataset Analysis Q&A', instructor: 'TBA', type: 'keynote', outcome: 'Reinforce EDA skills' },
     ],
   },
   {
     day: 3,
-    date: 'August 27, 2026',
+    date: 'TBA',
     type: 'online',
     title: 'Project Prep & ML Intro',
     sessions: [
-      { time: '20:00 - 20:45', topic: 'Git, GitHub & Development Tools', instructor: 'TBA', type: 'lecture', outcome: 'Version control a project' },
-      { time: '20:45 - 21:30', topic: 'ML Concepts & Scikit-learn Overview', instructor: 'TBA', type: 'lecture', outcome: 'Understand the ML workflow' },
-      { time: '21:30 - 22:30', topic: 'Mini-Project: End-to-End Data Pipeline', instructor: 'TBA', type: 'project', outcome: 'Build a complete pipeline' },
-      { time: '22:30 - 23:00', topic: 'Team Formation & Offline Briefing', instructor: 'Bootcamp Team', type: 'keynote', outcome: 'Form capstone teams' },
+      { time: 'TBA', topic: 'Git, GitHub & Development Tools', instructor: 'TBA', type: 'lecture', outcome: 'Version control a project' },
+      { time: 'TBA', topic: 'ML Concepts & Scikit-learn Overview', instructor: 'TBA', type: 'lecture', outcome: 'Understand the ML workflow' },
+      { time: 'TBA', topic: 'Mini-Project: End-to-End Data Pipeline', instructor: 'TBA', type: 'project', outcome: 'Build a complete pipeline' },
+      { time: 'TBA', topic: 'Team Formation & Offline Briefing', instructor: 'Bootcamp Team', type: 'keynote', outcome: 'Form capstone teams' },
     ],
   },
   {
     day: 4,
-    date: 'September 3, 2026',
+    date: 'TBA',
     type: 'offline',
     title: 'AI Foundations',
     sessions: [
-      { time: '10:00 - 10:45', topic: 'Intro to ML & Mathematics Refresher', instructor: 'TBA', type: 'lecture', outcome: 'Grasp linear algebra basics' },
-      { time: '10:45 - 11:45', topic: 'Linear Regression & Optimization', instructor: 'TBA', type: 'lecture', outcome: 'Train your first ML model' },
-      { time: '11:45 - 12:30', topic: 'Bias-Variance Tradeoff & Regularization', instructor: 'TBA', type: 'lecture', outcome: 'Diagnose model problems' },
-      { time: '12:30 - 13:00', topic: 'Keynote: AI Careers in Bangladesh', instructor: 'Guest Speaker', type: 'keynote', outcome: 'Explore career paths' },
+      { time: 'TBA', topic: 'Intro to ML & Mathematics Refresher', instructor: 'TBA', type: 'lecture', outcome: 'Grasp linear algebra basics' },
+      { time: 'TBA', topic: 'Linear Regression & Optimization', instructor: 'TBA', type: 'lecture', outcome: 'Train your first ML model' },
+      { time: 'TBA', topic: 'Bias-Variance Tradeoff & Regularization', instructor: 'TBA', type: 'lecture', outcome: 'Diagnose model problems' },
+      { time: 'TBA', topic: 'Keynote: AI Careers in Bangladesh', instructor: 'Guest Speaker', type: 'keynote', outcome: 'Explore career paths' },
     ],
   },
   {
     day: 5,
-    date: 'September 10, 2026',
+    date: 'TBA',
     type: 'offline',
     title: 'Feature Engineering',
     sessions: [
-      { time: '10:00 - 11:00', topic: 'Feature Selection & Encoding Techniques', instructor: 'TBA', type: 'lecture', outcome: 'Apply feature engineering' },
-      { time: '11:00 - 12:00', topic: 'Scaling, PCA & Imbalanced Data', instructor: 'TBA', type: 'lecture', outcome: 'Preprocess diverse datasets' },
-      { time: '12:00 - 13:00', topic: 'Lab: Preprocess a Healthcare Dataset', instructor: 'TBA', type: 'lab', outcome: 'Build a production-ready pipeline' },
+      { time: 'TBA', topic: 'Feature Selection & Encoding Techniques', instructor: 'TBA', type: 'lecture', outcome: 'Apply feature engineering' },
+      { time: 'TBA', topic: 'Scaling, PCA & Imbalanced Data', instructor: 'TBA', type: 'lecture', outcome: 'Preprocess diverse datasets' },
+      { time: 'TBA', topic: 'Lab: Preprocess a Healthcare Dataset', instructor: 'TBA', type: 'lab', outcome: 'Build a production-ready pipeline' },
     ],
   },
   {
     day: 6,
-    date: 'September 17, 2026',
+    date: 'TBA',
     type: 'offline',
     title: 'ML Algorithms Deep Dive',
     sessions: [
-      { time: '10:00 - 11:00', topic: 'Classification Algorithms (Logistic Reg, SVM, KNN)', instructor: 'TBA', type: 'lecture', outcome: 'Implement classifiers' },
-      { time: '11:00 - 12:00', topic: 'Ensemble Methods: Random Forest & Gradient Boosting', instructor: 'TBA', type: 'lecture', outcome: 'Use ensemble models' },
-      { time: '12:00 - 13:00', topic: 'Lab: Multi-Model Comparison Pipeline', instructor: 'TBA', type: 'lab', outcome: 'Compare model performance' },
+      { time: 'TBA', topic: 'Classification Algorithms (Logistic Reg, SVM, KNN)', instructor: 'TBA', type: 'lecture', outcome: 'Implement classifiers' },
+      { time: 'TBA', topic: 'Ensemble Methods: Random Forest & Gradient Boosting', instructor: 'TBA', type: 'lecture', outcome: 'Use ensemble models' },
+      { time: 'TBA', topic: 'Lab: Multi-Model Comparison Pipeline', instructor: 'TBA', type: 'lab', outcome: 'Compare model performance' },
     ],
   },
   {
     day: 7,
-    date: 'September 24, 2026',
+    date: 'TBA',
     type: 'offline',
     title: 'Evaluation & Deployment',
     sessions: [
-      { time: '10:00 - 11:00', topic: 'Evaluation Metrics & Cross-Validation', instructor: 'TBA', type: 'lecture', outcome: 'Evaluate models correctly' },
-      { time: '11:00 - 11:45', topic: 'Hyperparameter Tuning & Model Persistence', instructor: 'TBA', type: 'lecture', outcome: 'Optimize and save models' },
-      { time: '11:45 - 13:00', topic: 'Lab: Deploy ML Model with Streamlit', instructor: 'TBA', type: 'lab', outcome: 'Ship a live ML web app' },
+      { time: 'TBA', topic: 'Evaluation Metrics & Cross-Validation', instructor: 'TBA', type: 'lecture', outcome: 'Evaluate models correctly' },
+      { time: 'TBA', topic: 'Hyperparameter Tuning & Model Persistence', instructor: 'TBA', type: 'lecture', outcome: 'Optimize and save models' },
+      { time: 'TBA', topic: 'Lab: Deploy ML Model with Streamlit', instructor: 'TBA', type: 'lab', outcome: 'Ship a live ML web app' },
     ],
   },
   {
     day: 8,
-    date: 'October 1, 2026',
+    date: 'TBA',
     type: 'offline',
-    title: 'Capstone Demo Day 🎉',
+    title: 'Capstone Demo Day',
     sessions: [
-      { time: '10:00 - 10:30', topic: 'Final Project Preparation', instructor: 'Bootcamp Team', type: 'project', outcome: 'Polish project for demo' },
-      { time: '10:30 - 12:00', topic: 'Capstone Project Presentations', instructor: 'Panel of Judges', type: 'keynote', outcome: 'Present AI application to judges' },
-      { time: '12:00 - 12:30', topic: 'Awards Ceremony & Networking', instructor: 'Organizing Team', type: 'keynote', outcome: 'Celebrate achievements' },
-      { time: '12:30 - 13:00', topic: 'Closing Ceremony & Certificates', instructor: 'IEEE Leaders', type: 'keynote', outcome: 'Certificate distribution' },
+      { time: 'TBA', topic: 'Final Project Preparation', instructor: 'Bootcamp Team', type: 'project', outcome: 'Polish project for demo' },
+      { time: 'TBA', topic: 'Capstone Project Presentations', instructor: 'Panel of Judges', type: 'keynote', outcome: 'Present AI application to judges' },
+      { time: 'TBA', topic: 'Awards Ceremony & Networking', instructor: 'Organizing Team', type: 'keynote', outcome: 'Celebrate achievements' },
+      { time: 'TBA', topic: 'Closing Ceremony & Certificates', instructor: 'IEEE Leaders', type: 'keynote', outcome: 'Certificate distribution' },
     ],
   },
 ];
@@ -481,8 +481,8 @@ export const REGISTRATION_TIERS: RegistrationTier[] = [
     id: 'general',
     title: 'General Student',
     subtitle: 'Open to all undergraduate students',
-    price: 400,
-    currency: 'BDT',
+    price: 0,
+    currency: 'TBA',
     features: [
       '10-day comprehensive bootcamp',
       'Python Foundation (Online, 3 days)',
@@ -498,12 +498,12 @@ export const REGISTRATION_TIERS: RegistrationTier[] = [
     id: 'ieee-sb',
     title: 'IEEE Student Member',
     subtitle: 'IEEE Premier University Student Branch Members',
-    price: 300,
-    currency: 'BDT',
+    price: 0,
+    currency: 'TBA',
     highlighted: true,
     features: [
       'Everything in General Student',
-      'IEEE Student Branch discount (BDT 100 off)',
+      'IEEE Student Branch discount',
       'Priority seating at sessions',
       'IEEE networking events access',
       'LinkedIn profile optimization workshop',
@@ -516,11 +516,11 @@ export const REGISTRATION_TIERS: RegistrationTier[] = [
     id: 'ieee-cs',
     title: 'IEEE CS Member',
     subtitle: 'IEEE Computer Society Members',
-    price: 250,
-    currency: 'BDT',
+    price: 0,
+    currency: 'TBA',
     features: [
       'Everything in IEEE Student Member',
-      'IEEE CS Member exclusive discount (BDT 150 off)',
+      'IEEE CS Member exclusive discount',
       'IEEE CS branding on certificate',
       'Featured in IEEE CS showcase',
       'Advanced resource library access',
@@ -550,7 +550,7 @@ export const FAQS: FAQItem[] = [
   {
     question: 'What is the format of the bootcamp?',
     answer:
-      'The bootcamp consists of two phases. Phase 1 is a 3-day Online Python Foundation (August 25-27, 2026) conducted via video conferencing. Phase 2 is a 5-week Offline AI/ML Bootcamp (Thursdays, September 3 - October 1, 2026) held in-person at Premier University, Academic Building #4, Chattogram.',
+      'The bootcamp consists of two phases. Phase 1 is a 3-day Online Python Foundation (dates TBA) conducted via video conferencing. Phase 2 is a 5-week Offline AI/ML Bootcamp (dates TBA) held in-person at Premier University, Academic Building #4, Chattogram.',
     category: 'Format',
   },
   {
@@ -568,7 +568,7 @@ export const FAQS: FAQItem[] = [
   {
     question: 'How does the Capstone Project work?',
     answer:
-      'Capstone teams are formed on Day 3 of the Online Phase. Teams of 2–4 students choose a real-world problem domain and build an end-to-end ML solution over the following days. On Demo Day (October 1), teams present their live, deployed applications to a panel of judges who evaluate technical excellence, innovation, and deployment quality.',
+      'Capstone teams are formed on Day 3 of the Online Phase. Teams of 2–4 students choose a real-world problem domain and build an end-to-end ML solution over the following days. On Demo Day (date TBA), teams present their live, deployed applications to a panel of judges who evaluate technical excellence, innovation, and deployment quality.',
     category: 'Capstone',
   },
   {
@@ -586,7 +586,7 @@ export const FAQS: FAQItem[] = [
   {
     question: 'What is the registration fee and how do I pay?',
     answer:
-      'The registration fee is BDT 400 for General Students, BDT 300 for IEEE Student Branch Members, and BDT 250 for IEEE Computer Society Members. Payment details and instructions will be provided upon registration. All fees are non-refundable but transferable to another eligible participant.',
+      'Registration fees are To Be Announced (TBA) as we finalize the new schedule. Please follow our official channels for updates. All fees will be non-refundable but transferable to another eligible participant.',
     category: 'Registration',
   },
   {

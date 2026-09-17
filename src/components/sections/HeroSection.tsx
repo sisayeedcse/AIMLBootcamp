@@ -57,7 +57,7 @@ function TypewriterText() {
 
 const HERO_CHIPS = [
   { label: 'Premier University, Chattogram', icon: MapPin },
-  { label: 'Aug 25 – Oct 1, 2026', icon: Calendar },
+  { label: 'Dates TBA — Stay Tuned', icon: Calendar },
 ];
 
 const CTA_ACTIONS = [

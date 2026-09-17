@@ -134,8 +134,14 @@ export default function RegistrationSection() {
                   <p className="text-xs min-h-[32px]" style={{ color: 'rgba(255,255,255,0.5)' }}>{tier.subtitle}</p>
                   
                   <div className="mt-6 flex items-baseline gap-1">
-                    <span className="text-sm font-bold" style={{ color: '#FFB000' }}>{tier.currency}</span>
-                    <span className="text-4xl font-display font-bold text-white">{tier.price}</span>
+                    {tier.currency === 'TBA' ? (
+                      <span className="text-3xl font-display font-bold" style={{ color: '#FFB000' }}>TBA</span>
+                    ) : (
+                      <>
+                        <span className="text-sm font-bold" style={{ color: '#FFB000' }}>{tier.currency}</span>
+                        <span className="text-4xl font-display font-bold text-white">{tier.price}</span>
+                      </>
+                    )}
                   </div>
                 </div>
 
