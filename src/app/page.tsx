@@ -4,6 +4,8 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import HeroNotebookCell from '@/components/sections/HeroNotebookCell';
 import LearningCurveLine from '@/components/sections/LearningCurveLine';
+import CohortGallery from '@/components/sections/CohortGallery';
+import PressSection from '@/components/sections/PressSection';
 import EVENT from '@/config/event';
 
 export default function Home() {
@@ -222,7 +224,7 @@ export default function Home() {
               Our first AI/ML bootcamp introduced the fundamentals to undergraduate students. The 2026 program goes deeper and ends with a deployed project.
             </p>
 
-            <div className="stats-numbers">
+            <div className="stats-numbers mb-10">
               <div className="stats-number-item">
                 <strong>{EVENT.cohort2025.participants}</strong>
                 <span>Participants</span>
@@ -237,43 +239,12 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="gallery-grid">
-              <div className="gallery-item">
-                <Image
-                  src="/gallery/gallery-1.webp"
-                  alt="Bootcamp 2025"
-                  fill
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                  className="object-cover"
-                  loading="lazy"
-                />
-                <div className="gallery-caption">Bootcamp 2025</div>
-              </div>
-              <div className="gallery-item">
-                <Image
-                  src="/gallery/gallery-2.webp"
-                  alt="Bootcamp 2025"
-                  fill
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                  className="object-cover"
-                  loading="lazy"
-                />
-                <div className="gallery-caption">Bootcamp 2025</div>
-              </div>
-              <div className="gallery-item">
-                <Image
-                  src="/gallery/gallery-3.webp"
-                  alt="Bootcamp 2025"
-                  fill
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                  className="object-cover"
-                  loading="lazy"
-                />
-                <div className="gallery-caption">Bootcamp 2025</div>
-              </div>
-            </div>
+            <CohortGallery />
           </div>
         </section>
+
+        {/* ACADEMIC & MEDIA RECOGNITION */}
+        <PressSection />
 
         {/* FEES SECTION */}
         <section id="fees" aria-labelledby="fees-heading">

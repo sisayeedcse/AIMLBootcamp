@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
@@ -190,6 +191,63 @@ export default function CurriculumPage() {
                   </div>
                 </details>
               ))}
+            </div>
+          </div>
+
+          {/* Hands-on Lab Environment Visuals */}
+          <div className="mb-14 bg-surface border border-line rounded-card p-6 sm:p-8">
+            <div className="max-w-[650px] mb-6">
+              <span className="status-chip mb-3">Lab Environment</span>
+              <h2 className="text-xl sm:text-2xl font-bold my-2">
+                Grounding theory in direct laboratory practice
+              </h2>
+              <p className="text-muted text-sm leading-relaxed">
+                Every session is structured around active execution. Participants work with real datasets, write code in live environments, and receive immediate faculty and mentor guidance.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-black/40 border border-line rounded-card overflow-hidden">
+                <div className="relative aspect-[16/10] w-full">
+                  <Image
+                    src="/gallery/session-3-teaching.webp"
+                    alt="Instructor explaining machine learning algorithms during a lab session"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-4 border-t border-line">
+                  <h3 className="text-sm font-semibold text-text mb-1">
+                    Whiteboard & Code Walkthroughs
+                  </h3>
+                  <p className="text-xs text-muted leading-relaxed">
+                    Deconstructing complex supervised and unsupervised learning algorithms before writing implementation code.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-black/40 border border-line rounded-card overflow-hidden">
+                <div className="relative aspect-[16/10] w-full">
+                  <Image
+                    src="/gallery/session-1-lab.webp"
+                    alt="Students on computer lab workstations at Premier University"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-4 border-t border-line">
+                  <h3 className="text-sm font-semibold text-text mb-1">
+                    Workstation Lab Sessions
+                  </h3>
+                  <p className="text-xs text-muted leading-relaxed">
+                    Configuring Jupyter notebooks, importing scientific libraries, and debugging real machine learning pipelines.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 

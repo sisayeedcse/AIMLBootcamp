@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import EVENT from '@/config/event';
@@ -58,6 +59,33 @@ export default function ApplyPage() {
                 <p>Accept your invitation to confirm your seat.</p>
               </li>
             </ol>
+          </div>
+
+          {/* Cohort Banner Card */}
+          <div className="bg-surface border border-line rounded-card overflow-hidden mb-12">
+            <div className="relative aspect-[16/9] sm:aspect-[2.4/1] w-full">
+              <Image
+                src="/gallery/closing-ceremony-cohort.webp"
+                alt="Bootcamp 2025 cohort graduation ceremony at Premier University"
+                fill
+                sizes="(max-width: 1024px) 100vw, 1120px"
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-5 sm:p-6">
+                <div>
+                  <span className="text-[11px] font-mono text-accent bg-black/70 px-2.5 py-1 rounded-pill border border-line">
+                    Cohort 2025 Graduation
+                  </span>
+                  <p className="text-sm sm:text-base font-semibold text-text mt-2">
+                    Join an active, supportive community of engineering students and faculty mentors.
+                  </p>
+                  <p className="text-xs text-muted mt-1 hidden sm:block">
+                    Participants celebrating program completion with Vice Chancellor Prof. S. M. Nazrul Qadir and department faculty.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Notice Card */}
