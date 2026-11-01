@@ -1,12 +1,12 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Sora, IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
-import EVENT_CONFIG from '@/config/event';
+import EVENT from '@/config/event';
 
 const sora = Sora({
   subsets: ['latin'],
   variable: '--font-sora',
-  weight: ['600', '700', '800'],
+  weight: ['600', '700'],
   display: 'swap',
 });
 
@@ -20,9 +20,15 @@ const ibmPlexSans = IBM_Plex_Sans({
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
   variable: '--font-ibm-plex-mono',
-  weight: ['400', '500'],
+  weight: ['400'],
   display: 'swap',
 });
+
+export const viewport: Viewport = {
+  themeColor: '#000000',
+  width: 'device-width',
+  initialScale: 1,
+};
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ||
@@ -30,16 +36,16 @@ const siteUrl =
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     : undefined) ||
   (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined) ||
-  'https://aiml-bootcamp.vercel.app';
+  'https://aiml-bootcamp-2026.vercel.app';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${EVENT_CONFIG.name} | ${EVENT_CONFIG.organizer.university}`,
-    template: `%s | ${EVENT_CONFIG.name}`,
+    default: `${EVENT.name} | ${EVENT.organizer.university}`,
+    template: `%s | ${EVENT.name}`,
   },
   description:
-    'A hands-on, beginner-friendly bootcamp by the IEEE Computer Society Premier University Student Branch Chapter. You start with Python and finish with a deployed machine learning application.',
+    'A hands-on, beginner-friendly AI and machine learning bootcamp by the IEEE Computer Society Premier University Student Branch Chapter. 8 sessions, Python to deployment.',
   keywords: [
     'IEEE CS AI/ML Bootcamp 2026',
     'IEEE Computer Society',
@@ -51,32 +57,32 @@ export const metadata: Metadata = {
     'Scikit-learn',
     'Streamlit',
   ],
-  authors: [{ name: EVENT_CONFIG.organizer.fullName }],
-  creator: EVENT_CONFIG.organizer.fullName,
-  publisher: EVENT_CONFIG.organizer.fullName,
+  authors: [{ name: EVENT.organizer.name }],
+  creator: EVENT.organizer.name,
+  publisher: EVENT.organizer.name,
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: siteUrl,
-    siteName: EVENT_CONFIG.name,
-    title: `${EVENT_CONFIG.name} | ${EVENT_CONFIG.organizer.university}`,
+    siteName: EVENT.name,
+    title: `${EVENT.name} | ${EVENT.organizer.university}`,
     description:
-      'Learn AI. Understand machine learning. Build something real. A hands-on bootcamp by IEEE CS Premier University Student Branch Chapter.',
+      'A hands-on, beginner-friendly AI and machine learning bootcamp by the IEEE Computer Society Premier University Student Branch Chapter. 8 sessions, Python to deployment.',
     images: [
       {
-        url: '/og-image.png',
+        url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: `${EVENT_CONFIG.name} Banner`,
+        alt: EVENT.name,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${EVENT_CONFIG.name} | ${EVENT_CONFIG.organizer.university}`,
+    title: `${EVENT.name} | ${EVENT.organizer.university}`,
     description:
-      'Learn AI. Understand machine learning. Build something real. A hands-on bootcamp by IEEE CS Premier University Student Branch Chapter.',
-    images: ['/og-image.png'],
+      'A hands-on, beginner-friendly AI and machine learning bootcamp by the IEEE Computer Society Premier University Student Branch Chapter. 8 sessions, Python to deployment.',
+    images: ['/opengraph-image'],
   },
   robots: {
     index: true,
@@ -92,13 +98,42 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: EVENT.organizer.name,
+    alternateName: EVENT.organizer.chapter,
+    url: siteUrl,
+    email: EVENT.email,
+    telephone: EVENT.phone,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Academic Building #4, Premier University',
+      addressLocality: 'Chattogram',
+      addressCountry: 'BD',
+    },
+    sameAs: [
+      EVENT.socials.facebook,
+      EVENT.socials.linkedin,
+      EVENT.socials.youtube,
+      EVENT.socials.instagram,
+    ],
+  };
+
   return (
     <html
       lang="en"
       className={`${sora.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable}`}
       suppressHydrationWarning
     >
-      <body className="bg-black text-white antialiased min-h-screen flex flex-col" suppressHydrationWarning>
+      <body className="bg-bg text-text antialiased min-h-screen flex flex-col" suppressHydrationWarning>
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>

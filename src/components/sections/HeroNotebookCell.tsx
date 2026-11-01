@@ -3,10 +3,10 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 const OUTPUT_STEPS = [
-  '<b>Python</b> done',
-  '<b>Data</b> ready',
-  '<b>Model</b> trained',
-  '<b>App</b> live. Share it with the world.',
+  'Python done',
+  'Data ready',
+  'Model trained',
+  'App live. Share it with the world.',
 ];
 
 export default function HeroNotebookCell() {
@@ -37,7 +37,7 @@ export default function HeroNotebookCell() {
         const nextStep = OUTPUT_STEPS[stepIndex];
         setOutputLines((prev) => [...prev, nextStep]);
         stepIndex++;
-        timeoutRef.current = setTimeout(executeNext, 550);
+        timeoutRef.current = setTimeout(executeNext, 500);
       } else {
         setIsRunning(false);
       }
@@ -52,52 +52,60 @@ export default function HeroNotebookCell() {
       window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (!prefersReducedMotion) {
-      const initialTimer = setTimeout(() => {
+      const timer = setTimeout(() => {
         runCell();
-      }, 700);
+      }, 400);
       return () => {
-        clearTimeout(initialTimer);
+        clearTimeout(timer);
         if (timeoutRef.current) clearTimeout(timeoutRef.current);
       };
     } else {
-      setOutputLines(OUTPUT_STEPS);
+      const timer = setTimeout(() => {
+        setOutputLines(OUTPUT_STEPS);
+      }, 0);
+      return () => clearTimeout(timer);
     }
   }, [runCell]);
 
   return (
-    <div className="cell" aria-label="Example notebook cell">
-      <div className="bar">
+    <div className="cell" aria-label="Example Jupyter notebook cell">
+      <div className="cell-bar">
         <span>bootcamp_2026.ipynb</span>
         <button
           type="button"
           onClick={runCell}
           disabled={isRunning}
-          aria-label="Run notebook cell code"
+          className="cell-button"
+          aria-label="Run notebook code cell"
         >
           {isRunning ? 'Running...' : 'Run cell'}
         </button>
       </div>
 
-      <pre className="font-mono text-[14px]">
-        <span className="k">import</span> bootcamp{'\n'}
+      <pre className="cell-pre font-mono">
+        <span className="cell-k">import</span> bootcamp{'\n'}
         {'\n'}
-        model = bootcamp.<span className="k">learn</span>(&quot;Python&quot;, &quot;Data&quot;, &quot;ML&quot;){'\n'}
-        app   = bootcamp.<span className="k">deploy</span>(model)
+        model = bootcamp.<span className="cell-k">learn</span>(&quot;Python&quot;, &quot;Data&quot;, &quot;ML&quot;){'\n'}
+        app   = bootcamp.<span className="cell-k">deploy</span>(model)
       </pre>
 
       <div
-        className="out"
+        className="cell-out font-mono text-[13.5px]"
         aria-live="polite"
       >
         {outputLines.length === 0 ? (
           <span className="text-[#666666]">Output appears here.</span>
         ) : (
-          outputLines.map((line, idx) => (
-            <div
-              key={idx}
-              dangerouslySetInnerHTML={{ __html: line }}
-            />
-          ))
+          outputLines.map((line, idx) => {
+            const firstWord = line.split(' ')[0];
+            const rest = line.substring(firstWord.length);
+            return (
+              <div key={idx}>
+                <b>{firstWord}</b>
+                {rest}
+              </div>
+            );
+          })
         )}
       </div>
     </div>

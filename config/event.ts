@@ -1,41 +1,32 @@
-/**
- * IEEE CS AI/ML Bootcamp 2026 - Event Configuration
- * Single source of truth for all dates, fees, and seat counts.
- * Update values here to propagate across the entire site.
- */
-
 export interface EventConfig {
   name: string;
   shortName: string;
-  year: string;
   organizer: {
-    fullName: string;
-    chapterName: string;
+    name: string;
+    chapter: string;
     university: string;
     location: string;
-    email: string;
-    address: string;
-    copyright: string;
   };
-  application: {
-    formUrl: string;
-    statusBadge: string;
-    disclaimer: string;
-  };
+  applyUrl: string;
+  email: string;
+  phone: string;
+  address: string;
   dates: {
-    overall: string;
-    phase1: string;
-    phase2: string;
-    scheduleNote: string;
-  };
+    start: string | null;
+    end: string | null;
+    display: string | null;
+  } | null;
   fees: {
-    ieeeMembers: string;
-    generalStudents: string;
-    note: string;
+    ieeeMember: number | string | null;
+    general: number | string | null;
   };
-  seats: {
-    total: string;
-    status: string;
+  seats: number | string | null;
+  applicationDeadline: string | null;
+  socials: {
+    facebook: string;
+    linkedin: string;
+    youtube: string;
+    instagram: string;
   };
   cohort2025: {
     participants: number;
@@ -44,38 +35,31 @@ export interface EventConfig {
   };
 }
 
-export const EVENT_CONFIG: EventConfig = {
+export const EVENT: EventConfig = {
   name: 'IEEE CS AI/ML Bootcamp 2026',
   shortName: 'Bootcamp 2026',
-  year: '2026',
   organizer: {
-    fullName: 'IEEE Computer Society Premier University Student Branch Chapter',
-    chapterName: 'IEEE CS PUSBC',
+    name: 'IEEE Computer Society Premier University Student Branch Chapter',
+    chapter: 'IEEE CS PUSBC',
     university: 'Premier University',
     location: 'Chattogram, Bangladesh',
-    email: 'ieeecspusbc@gmail.com',
-    address: 'Academic Building #4, Premier University, Chattogram',
-    copyright: '© 2026 IEEE Computer Society Premier University Student Branch Chapter',
   },
-  application: {
-    formUrl: 'https://forms.gle/pKzK7a8EMf8Vpo2WA',
-    statusBadge: 'Invite-only. Eligibility applications are open.',
-    disclaimer: 'Submitting the form does not guarantee a seat.',
-  },
-  dates: {
-    overall: 'TBA',
-    phase1: 'TBA (Online, 3 sessions)',
-    phase2: 'TBA (In person, 5 sessions)',
-    scheduleNote: 'Dates coming soon · Announced to invited applicants',
-  },
+  applyUrl: 'https://forms.gle/pKzK7a8EMf8Vpo2WA',
+  email: 'ieeecspusbc@gmail.com',
+  phone: '01644238788',
+  address: 'Academic Building #4, Premier University, Chattogram',
+  dates: null,
   fees: {
-    ieeeMembers: 'To be announced',
-    generalStudents: 'To be announced',
-    note: 'We will announce the fee to invited applicants. There are two categories: IEEE members and General students.',
+    ieeeMember: null,
+    general: null,
   },
-  seats: {
-    total: 'TBA',
-    status: 'Limited — review-based eligibility',
+  seats: null,
+  applicationDeadline: null,
+  socials: {
+    facebook: 'https://www.facebook.com/IEEECS.PUSBC/',
+    linkedin: 'https://www.linkedin.com/company/ieee-cs-pusbc',
+    youtube: 'https://www.youtube.com/@IEEECSPremierUniversitySBC',
+    instagram: 'https://www.instagram.com/ieee_cs_premier_university/',
   },
   cohort2025: {
     participants: 65,
@@ -84,4 +68,4 @@ export const EVENT_CONFIG: EventConfig = {
   },
 };
 
-export default EVENT_CONFIG;
+export default EVENT;

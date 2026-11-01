@@ -2,160 +2,99 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import EVENT_CONFIG from '@/config/event';
 
 export const metadata: Metadata = {
-  title: 'Full Curriculum Breakdown',
+  title: 'Curriculum',
   description:
-    'Explore the full 8-session syllabus for the IEEE CS AI/ML Bootcamp 2026. From Python programming foundations to deploying machine learning applications.',
+    'Comprehensive syllabus for IEEE CS AI/ML Bootcamp 2026. 8 sessions across two phases, taking you from Python foundations to a deployed machine learning application.',
 };
 
-interface SessionDetail {
-  number: string;
-  phase: string;
-  mode: string;
-  title: string;
-  description: string;
-  topics: string[];
-  handsOn: string;
-  tools: string[];
-}
-
-const SESSIONS: SessionDetail[] = [
+const PHASE_1_SESSIONS = [
   {
-    number: 'Session 1',
-    phase: 'Phase 1: Foundation',
-    mode: 'Online',
+    tag: 'Session 1',
     title: 'Introduction to Python',
-    description:
-      'Build a rock-solid foundation in Python programming tailored specifically for scientific computing and machine learning.',
     topics: [
-      'Python syntax, environment setup, and interpreter basics',
-      'Variables, primitive data types, type casting, and operators',
-      'Conditional control structures (if, elif, else) and comparison logic',
-      'Iteration patterns: while loops, for loops, and list comprehensions',
-      'Function definition, arguments, return values, and variable scope',
+      'Python fundamentals',
+      'Variables and data types',
+      'Conditional statements and loops',
+      'Functions and programming exercises',
     ],
-    handsOn: 'Write interactive Python utility scripts and algorithmic problem solvers.',
-    tools: ['Python 3', 'VS Code', 'Google Colab'],
   },
   {
-    number: 'Session 2',
-    phase: 'Phase 1: Foundation',
-    mode: 'Online',
-    title: 'Python for Data Handling',
-    description:
-      'Learn how industry professionals load, clean, transform, and manipulate datasets with NumPy and Pandas.',
+    tag: 'Session 2',
+    title: 'Python for data handling',
     topics: [
-      'NumPy arrays: indexing, slicing, vectorization, and broadcasting',
-      'Pandas core structures: Series and DataFrames',
-      'Importing and exporting datasets (CSV, Excel, JSON)',
-      'Data cleaning: handling missing values, duplicates, and data type alignment',
-      'Filtering, sorting, grouping (groupby), and summary aggregations',
+      'Data structures',
+      'NumPy',
+      'Pandas',
+      'File handling',
+      'Data manipulation',
     ],
-    handsOn: 'Clean and inspect a messy real-world tabular dataset from scratch.',
-    tools: ['NumPy', 'Pandas', 'Jupyter Notebook'],
   },
   {
-    number: 'Session 3',
-    phase: 'Phase 1: Foundation',
-    mode: 'Online',
-    title: 'Data Analysis & Visualization',
-    description:
-      'Discover patterns, correlations, and anomalies in complex data using exploratory data analysis and visual storytelling.',
+    tag: 'Session 3',
+    title: 'Data analysis and visualization',
     topics: [
-      'Exploratory Data Analysis (EDA) framework and best practices',
-      'Univariate, bivariate, and multivariate distribution inspection',
-      'Data visualization principles using Matplotlib and Seaborn',
-      'Histograms, scatter plots, box plots, heatmaps, and correlation matrices',
-      'Feature relationships and preparing data pipelines for modeling',
+      'Data cleaning',
+      'Exploratory data analysis',
+      'Data visualization',
+      'Dataset preparation',
     ],
-    handsOn: 'Construct an end-to-end exploratory analysis notebook with publication-quality charts.',
-    tools: ['Matplotlib', 'Seaborn', 'Pandas'],
+  },
+];
+
+const PHASE_2_SESSIONS = [
+  {
+    tag: 'Session 4',
+    title: 'Introduction to AI and ML',
+    topics: [
+      'AI, ML and deep learning',
+      'Supervised and unsupervised learning',
+      'Classification and regression',
+      'Real-world applications',
+    ],
   },
   {
-    number: 'Session 4',
-    phase: 'Phase 2: Practical',
-    mode: 'In person',
-    title: 'Introduction to AI and Machine Learning',
-    description:
-      'Transition from data analysis to predictive modeling, understanding core machine learning taxonomy and algorithms.',
+    tag: 'Session 5',
+    title: 'Machine learning fundamentals',
     topics: [
-      'The landscape of Artificial Intelligence, Machine Learning, and Deep Learning',
-      'Supervised vs. Unsupervised vs. Reinforcement Learning',
-      'Formulating real-world problems as classification or regression tasks',
-      'The machine learning lifecycle: from raw data to evaluation',
-      'Linear Regression and baseline model intuition',
+      'Data preprocessing',
+      'Training and testing datasets',
+      'Feature selection',
+      'Scikit-learn',
+      'Model training',
     ],
-    handsOn: 'Train and interpret your first predictive regression model using Scikit-learn.',
-    tools: ['Scikit-learn', 'Jupyter Notebook'],
   },
   {
-    number: 'Session 5',
-    phase: 'Phase 2: Practical',
-    mode: 'In person',
-    title: 'Machine Learning Fundamentals & Preprocessing',
-    description:
-      'Master data transformation pipelines, train/test splitting, and feature preparation for production models.',
+    tag: 'Session 6',
+    title: 'Practical machine learning project',
     topics: [
-      'Train, validation, and test split methodologies',
-      'Feature scaling: StandardScaler vs. MinMaxScaler',
-      'Categorical encoding: One-Hot Encoding and Label Encoding',
-      'Preventing data leakage and overfitting',
-      'Building Scikit-learn Pipeline objects for reproducible workflows',
+      'Problem identification',
+      'Dataset selection',
+      'Model development',
+      'Evaluation and performance analysis',
     ],
-    handsOn: 'Build an automated preprocessing pipeline that feeds clean data directly into estimators.',
-    tools: ['Scikit-learn', 'Pandas', 'NumPy'],
   },
   {
-    number: 'Session 6',
-    phase: 'Phase 2: Practical',
-    mode: 'In person',
-    title: 'Practical ML Project & Evaluation',
-    description:
-      'Implement leading classification algorithms, benchmark performance, and rigorously evaluate model metrics.',
+    tag: 'Session 7',
+    title: 'Model deployment and application development',
     topics: [
-      'Classification algorithms: Logistic Regression, Decision Trees, and Random Forests',
-      'Ensemble learning intuition and bagging principles',
-      'Evaluation metrics: Confusion Matrix, Precision, Recall, F1-Score, and ROC-AUC',
-      'Cross-validation strategies and hyperparameter tuning with GridSearchCV',
-      'Selecting the best performing model based on business objectives',
+      'Model saving',
+      'Streamlit',
+      'Application development',
+      'GitHub',
+      'Deployment fundamentals',
     ],
-    handsOn: 'Train and compare multiple models on a chosen challenge dataset to identify the optimal predictor.',
-    tools: ['Scikit-learn', 'Joblib'],
   },
   {
-    number: 'Session 7',
-    phase: 'Phase 2: Practical',
-    mode: 'In person',
-    title: 'Model Deployment & Interactive Web Apps',
-    description:
-      'Package your trained model into a production artifact and deploy an interactive user-facing web app with Streamlit.',
+    tag: 'Session 8',
+    title: 'Final project showcase',
     topics: [
-      'Model serialization and persistence using Joblib',
-      'Writing web interfaces with Streamlit: inputs, sliders, select boxes, charts',
-      'Connecting front-end inputs to model prediction pipelines',
-      'Version control with Git and publishing projects to GitHub',
-      'Hosting and deploying web applications online for public demonstration',
+      'Project presentation',
+      'Live demonstrations',
+      'Technical evaluation',
+      'Mentorship and feedback',
     ],
-    handsOn: 'Create a live, functional web application where anyone can test your ML model with their own inputs.',
-    tools: ['Streamlit', 'Git', 'GitHub', 'Python'],
-  },
-  {
-    number: 'Session 8',
-    phase: 'Phase 2: Practical',
-    mode: 'In person',
-    title: 'Final Project Showcase & Certificate Distribution',
-    description:
-      'Present your live deployed application to mentors, celebrate cohort achievements, and receive your official certificate.',
-    topics: [
-      'Live team presentations and demonstrations of deployed ML applications',
-      'Technical reviews and feedback from mentors and IEEE leaders',
-      'Discussion on next steps: advanced topics, open-source contribution, and career paths',
-      'Certificate distribution ceremony and cohort group photo',
-    ],
-    handsOn: 'Live demonstration and defense of your working machine learning project.',
-    tools: ['Live Applications', 'GitHub Repositories'],
   },
 ];
 
@@ -164,123 +103,106 @@ export default function CurriculumPage() {
     <>
       <Navbar />
 
-      <main className="w-full py-16">
+      <main id="main-content" className="w-full py-16">
         <div className="wrap">
           {/* Header */}
-          <div className="max-w-[760px] mb-12">
-            <span className="status mb-4">Comprehensive Syllabus</span>
-            <h1 className="text-white text-3xl md:text-5xl font-extrabold my-4">
-              Curriculum: 8 Sessions, Two Phases
+          <div className="max-w-[700px] mb-12">
+            <span className="status-chip mb-4">Curriculum</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold my-4">
+              Eight sessions, two phases
             </h1>
-            <p className="text-[#a8a8a8] text-lg leading-relaxed">
-              Designed from the ground up for beginners. You start with Python programming foundations online, then transition to intensive in-person sessions where you build, test, and deploy a real machine learning application.
+            <p className="text-muted text-lg leading-relaxed">
+              Every session is hands-on. You begin with core Python foundations online, then move into in-person practical sessions to develop, evaluate and deploy a real machine learning application.
             </p>
           </div>
 
-          {/* Phase summaries */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-            <div className="card">
-              <span className="font-mono text-sm text-[#f9a318] font-medium">PHASE 1</span>
-              <h2 className="text-xl font-bold mt-2 mb-2">Foundation Phase</h2>
-              <p className="text-[#a8a8a8] text-sm mb-4">
-                Online · 3 Sessions · Focus on programming, scientific libraries, and exploratory data analysis.
-              </p>
-              <div className="text-xs font-mono text-[#a8a8a8] bg-black p-3 rounded border border-[#2b2b2b]">
-                Tools: Python 3, NumPy, Pandas, Matplotlib, Seaborn
-              </div>
+          {/* Phase 1 */}
+          <div className="mb-14">
+            <div className="border-b border-line pb-4 mb-6">
+              <h2 className="text-2xl font-bold">Phase 1: Foundation</h2>
+              <p className="text-muted text-sm">Online · 3 sessions</p>
             </div>
 
-            <div className="card">
-              <span className="font-mono text-sm text-[#f9a318] font-medium">PHASE 2</span>
-              <h2 className="text-xl font-bold mt-2 mb-2">Practical Phase</h2>
-              <p className="text-[#a8a8a8] text-sm mb-4">
-                In person at Premier University · 5 Sessions · Focus on ML modeling, feature engineering, and app deployment.
-              </p>
-              <div className="text-xs font-mono text-[#a8a8a8] bg-black p-3 rounded border border-[#2b2b2b]">
-                Tools: Scikit-learn, Joblib, Streamlit, Git, GitHub
-              </div>
-            </div>
-          </div>
-
-          {/* Sessions Detailed List */}
-          <div className="space-y-8 mb-16">
-            <h2 className="text-2xl font-bold">Session by Session Breakdown</h2>
-
-            {SESSIONS.map((sess) => (
-              <div
-                key={sess.number}
-                className="border border-[#2b2b2b] bg-[#141414] rounded-lg p-6 md:p-8 hover:border-[#f9a318]/50 transition-colors"
-              >
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                  <div className="flex items-center gap-3">
-                    <span className="font-mono text-sm font-semibold text-[#f9a318]">
-                      {sess.number}
+            <div className="space-y-4">
+              {PHASE_1_SESSIONS.map((sess, idx) => (
+                <details
+                  key={sess.tag}
+                  open={idx === 0}
+                  className="bg-surface border border-line rounded-card p-5 transition-colors hover:border-accent/40"
+                >
+                  <summary className="text-lg font-semibold cursor-pointer">
+                    <span className="flex items-center gap-3">
+                      <span className="font-mono text-xs text-accent">{sess.tag}</span>
+                      <span>{sess.title}</span>
                     </span>
-                    <span className="text-xs text-[#a8a8a8] border border-[#2b2b2b] px-2.5 py-0.5 rounded">
-                      {sess.phase}
-                    </span>
-                  </div>
-                  <span className="text-xs font-medium text-[#f9a318] bg-[#f9a318]/10 px-3 py-1 rounded-full border border-[#f9a318]/20">
-                    {sess.mode}
-                  </span>
-                </div>
+                  </summary>
 
-                <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">
-                  {sess.title}
-                </h3>
-                <p className="text-[#a8a8a8] text-base mb-6 max-w-[70ch]">
-                  {sess.description}
-                </p>
-
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-4 border-t border-[#2b2b2b]">
-                  <div className="lg:col-span-2">
-                    <h4 className="text-xs font-mono uppercase tracking-wider text-[#a8a8a8] mb-3">
-                      Topics Covered
-                    </h4>
+                  <div className="mt-4 pt-4 border-t border-line">
+                    <h3 className="text-xs uppercase font-mono tracking-wider text-muted mb-3">
+                      Topics covered
+                    </h3>
                     <ul className="space-y-2 list-none p-0 m-0">
-                      {sess.topics.map((topic, i) => (
-                        <li key={i} className="text-sm text-[#e8e8e8] flex items-start gap-2">
-                          <span className="text-[#f9a318] mt-0.5">•</span>
-                          <span>{topic}</span>
+                      {sess.topics.map((t) => (
+                        <li key={t} className="text-sm text-text flex items-start gap-2">
+                          <span className="text-accent">•</span>
+                          <span>{t}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-
-                  <div>
-                    <h4 className="text-xs font-mono uppercase tracking-wider text-[#a8a8a8] mb-3">
-                      Hands-on Lab
-                    </h4>
-                    <p className="text-sm text-[#e8e8e8] bg-black p-3.5 rounded border border-[#2b2b2b] mb-4">
-                      {sess.handsOn}
-                    </p>
-
-                    <h4 className="text-xs font-mono uppercase tracking-wider text-[#a8a8a8] mb-2">
-                      Tools & Libraries
-                    </h4>
-                    <div className="flex flex-wrap gap-1.5">
-                      {sess.tools.map((t) => (
-                        <span
-                          key={t}
-                          className="font-mono text-xs text-[#a8a8a8] bg-[#1a1a1a] px-2.5 py-1 rounded border border-[#2b2b2b]"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+                </details>
+              ))}
+            </div>
           </div>
 
-          {/* CTA at Bottom */}
-          <div className="final border-t border-[#2b2b2b] pt-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">Ready to begin your journey?</h2>
-            <p className="text-[#a8a8a8] mb-6">
-              Applications are reviewed for commitment and interest. No prior machine learning background is required.
-            </p>
-            <Link className="btn primary" href="/apply">
+          {/* Phase 2 */}
+          <div className="mb-14">
+            <div className="border-b border-line pb-4 mb-6">
+              <h2 className="text-2xl font-bold">Phase 2: Practical</h2>
+              <p className="text-muted text-sm">In person · 5 sessions</p>
+            </div>
+
+            <div className="space-y-4">
+              {PHASE_2_SESSIONS.map((sess) => (
+                <details
+                  key={sess.tag}
+                  className="bg-surface border border-line rounded-card p-5 transition-colors hover:border-accent/40"
+                >
+                  <summary className="text-lg font-semibold cursor-pointer">
+                    <span className="flex items-center gap-3">
+                      <span className="font-mono text-xs text-accent">{sess.tag}</span>
+                      <span>{sess.title}</span>
+                    </span>
+                  </summary>
+
+                  <div className="mt-4 pt-4 border-t border-line">
+                    <h3 className="text-xs uppercase font-mono tracking-wider text-muted mb-3">
+                      Topics covered
+                    </h3>
+                    <ul className="space-y-2 list-none p-0 m-0">
+                      {sess.topics.map((t) => (
+                        <li key={t} className="text-sm text-text flex items-start gap-2">
+                          <span className="text-accent">•</span>
+                          <span>{t}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+
+          {/* Footnote */}
+          <p className="text-muted text-sm mb-12">
+            Format, venue and dates are confirmed in your invitation.
+          </p>
+
+          {/* Final CTA */}
+          <div className="final-cta border-t border-line pt-12">
+            <h2>Ready to build your first AI project?</h2>
+            <p>Apply for your eligibility and we will get back to you by email.</p>
+            <Link className="btn btn-primary" href="/apply">
               Apply for your eligibility
             </Link>
           </div>

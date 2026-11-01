@@ -11,14 +11,21 @@ const config: Config = {
     extend: {
       colors: {
         bg: '#000000',
-        surface: '#141414',
-        line: '#2b2b2b',
-        text: '#ffffff',
-        mute: '#a8a8a8',
-        orange: {
-          DEFAULT: '#f9a318',
+        surface: '#101010',
+        line: '#262626',
+        text: '#FAFAFA',
+        muted: '#A3A3A3',
+        accent: {
+          DEFAULT: '#F9A318',
           hover: '#fba92e',
+          ink: '#000000',
         },
+      },
+      borderRadius: {
+        card: '10px',
+        btn: '10px',
+        panel: '16px',
+        chip: '999px',
       },
       fontFamily: {
         display: ['var(--display)', 'var(--font-sora)', 'Sora', 'system-ui', 'sans-serif'],
