@@ -120,8 +120,8 @@ export default function PressSection() {
                     className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.03]"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
-                    <span className="text-xs font-medium text-text bg-black/70 backdrop-blur-xs px-2.5 py-1 rounded-pill border border-line group-hover:border-accent/50 transition-colors">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#090A0F]/90 via-transparent to-transparent flex items-end p-4">
+                    <span className="text-xs font-medium text-text bg-surface/90 backdrop-blur-sm px-2.5 py-1 rounded-pill border border-line group-hover:border-accent/50 transition-colors">
                       🔍 Click to read scan
                     </span>
                   </div>
@@ -164,7 +164,7 @@ export default function PressSection() {
             role="dialog"
             aria-modal="true"
             aria-label={selectedArticle.publication}
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
+            className="fixed inset-0 z-50 bg-[#090A0F]/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
             onClick={closeViewer}
           >
             <div
@@ -172,7 +172,7 @@ export default function PressSection() {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}
-              <div className="flex items-center justify-between px-5 py-3 border-b border-line bg-black/60 shrink-0">
+              <div className="flex items-center justify-between px-5 py-3 border-b border-line bg-surface/80 backdrop-blur-sm shrink-0">
                 <div>
                   <h2 className="text-sm font-bold text-text">
                     {selectedArticle.publication}

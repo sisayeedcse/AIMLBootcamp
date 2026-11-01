@@ -68,7 +68,7 @@ export default function Navbar() {
 
       {/* Mobile menu dropdown */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-line bg-black px-5 py-4">
+        <div className="md:hidden border-t border-line bg-surface/95 backdrop-blur-xl px-5 py-4 shadow-xl">
           <ul className="flex flex-col gap-4 list-none p-0 m-0 text-[15px]">
             {navLinks.map((link) => (
               <li key={link.label}>
