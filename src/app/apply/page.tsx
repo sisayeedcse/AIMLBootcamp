@@ -1,100 +1,117 @@
 import type { Metadata } from 'next';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import EVENT_CONFIG from '@/config/event';
+import EVENT from '@/config/event';
 
 export const metadata: Metadata = {
-  title: 'Apply for Eligibility',
+  title: 'Apply',
   description:
     'Submit your eligibility application for the IEEE CS AI/ML Bootcamp 2026. Submitting the form does not guarantee a seat.',
 };
 
 export default function ApplyPage() {
+  const deadlineText = EVENT.applicationDeadline || 'To be announced';
+
   return (
     <>
       <Navbar />
 
-      <main className="w-full py-16">
+      <main id="main-content" className="w-full py-16">
         <div className="wrap">
           {/* Header */}
-          <div className="max-w-[760px] mb-12">
-            <span className="status mb-4">{EVENT_CONFIG.application.statusBadge}</span>
-            <h1 className="text-white text-3xl md:text-5xl font-extrabold my-4">
-              Apply for {EVENT_CONFIG.name}
+          <div className="max-w-[720px] mb-12">
+            <span className="status-chip mb-4">Application</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold my-4">
+              Apply for {EVENT.name}
             </h1>
-            <p className="text-[#a8a8a8] text-lg leading-relaxed">
-              We welcome applications from motivated undergraduate students who want to build a genuine foundation in AI and machine learning. To ensure high mentor support and interactive lab experiences, cohort sizes are limited.
+            <p className="text-muted text-lg leading-relaxed">
+              We welcome applications from motivated undergraduate students interested in AI and machine learning. To maintain high mentorship quality and interactive lab sessions, seats are limited.
             </p>
           </div>
 
-          {/* Process explanation */}
+          {/* 4-step flow */}
           <div className="mb-14">
-            <h2 className="text-2xl font-bold mb-4">Application & Selection Process</h2>
-            <p className="text-[#a8a8a8] mb-8 max-w-[65ch]">
-              We evaluate applicants holistically based on interest, commitment, and career curiosity. Prior AI experience is not required.
+            <h2 className="text-2xl font-bold mb-4">How you get a seat</h2>
+            <p className="text-muted mb-8 max-w-[65ch]">
+              Seats are limited, so we review every application together once the application window closes.
             </p>
 
-            <ol className="steps">
-              <li>
-                <h3>1. Submit Form</h3>
-                <p>Fill out the eligibility application below (approx. 10 minutes).</p>
+            <ol className="steps-list p-0 m-0">
+              <li className="step-card">
+                <span className="step-in">In [1]</span>
+                <h3>Apply</h3>
+                <p>Fill in the short eligibility form. It takes about 10 minutes.</p>
               </li>
-              <li>
-                <h3>2. Application Review</h3>
-                <p>Our organizing committee reviews your application details and motivations.</p>
+              <li className="step-card">
+                <span className="step-in">In [2]</span>
+                <h3>Review</h3>
+                <p>We review your programming basics, career thinking and goals.</p>
               </li>
-              <li>
-                <h3>3. Invitation Email</h3>
-                <p>Selected applicants receive an invitation letter with schedule details.</p>
+              <li className="step-card">
+                <span className="step-in">In [3]</span>
+                <h3>Invitation</h3>
+                <p>Selected applicants receive an invitation with dates and fee details.</p>
               </li>
-              <li>
-                <h3>4. Confirmation</h3>
-                <p>Accept your invitation and complete onboarding to secure your seat.</p>
+              <li className="step-card">
+                <span className="step-in">In [4]</span>
+                <h3>Confirm</h3>
+                <p>Accept your invitation to confirm your seat.</p>
               </li>
             </ol>
           </div>
 
-          {/* Important Notice */}
-          <div className="border border-[#f9a318]/40 bg-[#141414] rounded-lg p-6 mb-12 flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div>
-              <p className="text-[#f9a318] font-semibold text-base mb-1">
-                Notice: {EVENT_CONFIG.application.disclaimer}
-              </p>
-              <p className="text-[#a8a8a8] text-sm">
-                Applications are reviewed on a rolling basis. All applicants will be notified by email once the selection committee completes its review.
-              </p>
-            </div>
-            <a
-              href={EVENT_CONFIG.application.formUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn ghost whitespace-nowrap text-sm !py-2.5 !px-4"
-            >
-              Open in new tab ↗
-            </a>
+          {/* Notice Card */}
+          <div className="bg-surface border border-line rounded-card p-6 mb-12 space-y-3">
+            <p className="text-text font-semibold text-base">
+              Submitting the form does not guarantee a seat. We review all applications together once the application window closes. Selected applicants will be contacted by email.
+            </p>
+            <p className="text-muted text-sm">
+              <span className="text-text font-medium">Application deadline:</span> {deadlineText}
+            </p>
+            <p className="text-muted text-xs">
+              Your answers are used only to review your application and contact you about this bootcamp.
+            </p>
           </div>
 
-          {/* Embedded Google Form Container */}
-          <div className="border border-[#2b2b2b] bg-[#141414] rounded-lg overflow-hidden">
-            <div className="border-b border-[#2b2b2b] px-6 py-4 flex items-center justify-between bg-black/40">
-              <span className="font-mono text-sm text-[#a8a8a8]">Google Form · Eligibility Application</span>
+          {/* Mobile Apply (< 768px): Button and note only */}
+          <div className="block md:hidden my-8">
+            <a
+              href={EVENT.applyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary w-full text-center py-4 text-base"
+            >
+              Open the application form ↗
+            </a>
+            <p className="text-muted text-xs text-center mt-3">
+              It takes about 10 minutes and needs a Google sign-in.
+            </p>
+          </div>
+
+          {/* Desktop Apply (>= 768px): Embed iframe */}
+          <div className="hidden md:block my-8">
+            <div className="flex justify-between items-center mb-3">
+              <p className="text-sm text-muted">
+                Sign in with Google and tick the email box at the top to continue.
+              </p>
               <a
-                href={EVENT_CONFIG.application.formUrl}
+                href={EVENT.applyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-[#f9a318] hover:underline"
+                className="text-xs text-accent hover:underline"
               >
-                Having trouble viewing? Open full screen ↗
+                Open the form in a new tab ↗
               </a>
             </div>
 
-            <div className="relative w-full h-[950px] bg-white">
+            <div className="bg-white border border-line rounded-card overflow-hidden">
               <iframe
-                src={EVENT_CONFIG.application.formUrl}
+                src={EVENT.applyUrl}
+                title="IEEE CS AI/ML Bootcamp 2026 Application Form"
+                loading="lazy"
                 width="100%"
-                height="100%"
-                className="w-full h-full border-0"
-                title="IEEE CS AI/ML Bootcamp 2026 Eligibility Application"
+                className="w-full border-0 block"
+                style={{ minHeight: '1500px' }}
               >
                 Loading application form…
               </iframe>
