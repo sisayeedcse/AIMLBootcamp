@@ -10,11 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: '#000000',
-        surface: '#101010',
-        line: '#262626',
-        text: '#FAFAFA',
-        muted: '#A3A3A3',
+        bg: 'var(--bg)',
+        surface: 'var(--surface)',
+        line: 'var(--line)',
+        text: 'var(--text)',
+        muted: 'var(--muted)',
         accent: {
           DEFAULT: '#F9A318',
           hover: '#fba92e',

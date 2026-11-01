@@ -72,9 +72,9 @@ export default function ApplyPage() {
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-5 sm:p-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#090A0F]/95 via-[#090A0F]/40 to-transparent flex items-end p-5 sm:p-6">
                 <div>
-                  <span className="text-[11px] font-mono text-accent bg-black/70 px-2.5 py-1 rounded-pill border border-line">
+                  <span className="text-[11px] font-mono text-accent bg-surface/90 backdrop-blur-sm px-2.5 py-1 rounded-pill border border-line">
                     Cohort 2025 Graduation
                   </span>
                   <p className="text-sm sm:text-base font-semibold text-text mt-2">

@@ -234,7 +234,7 @@ export default function CohortGallery() {
             aria-label={`View full image: ${item.title}`}
             className="group cursor-pointer bg-surface border border-line rounded-card overflow-hidden transition-all duration-200 hover:border-accent/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
           >
-            <div className="relative aspect-[16/10] w-full overflow-hidden bg-black/40">
+            <div className="relative aspect-[16/10] w-full overflow-hidden bg-black/30">
               <Image
                 src={item.src}
                 alt={item.alt}
@@ -243,7 +243,7 @@ export default function CohortGallery() {
                 className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                 loading="lazy"
               />
-              <span className="absolute top-3 left-3 bg-black/80 backdrop-blur-xs text-accent font-mono text-[11px] px-2.5 py-1 rounded-pill border border-line">
+              <span className="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm text-accent font-mono text-[11px] px-2.5 py-1 rounded-pill border border-line">
                 {item.categoryLabel}
               </span>
             </div>
@@ -265,7 +265,7 @@ export default function CohortGallery() {
           role="dialog"
           aria-modal="true"
           aria-label={currentItem.title}
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
+          className="fixed inset-0 z-50 bg-[#090A0F]/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
           onClick={closeLightbox}
         >
           <div
@@ -273,7 +273,7 @@ export default function CohortGallery() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header with category and close button */}
-            <div className="flex items-center justify-between px-5 py-3 border-b border-line bg-black/40">
+            <div className="flex items-center justify-between px-5 py-3 border-b border-line bg-surface/70 backdrop-blur-sm">
               <span className="text-xs font-mono text-accent">
                 {currentItem.categoryLabel} · {lightboxIndex! + 1} of {filteredItems.length}
               </span>

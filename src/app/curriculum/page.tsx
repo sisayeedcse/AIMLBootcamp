@@ -207,7 +207,7 @@ export default function CurriculumPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-black/40 border border-line rounded-card overflow-hidden">
+              <div className="bg-surface/50 border border-line rounded-card overflow-hidden">
                 <div className="relative aspect-[16/10] w-full">
                   <Image
                     src="/gallery/session-3-teaching.webp"
@@ -228,7 +228,7 @@ export default function CurriculumPage() {
                 </div>
               </div>
 
-              <div className="bg-black/40 border border-line rounded-card overflow-hidden">
+              <div className="bg-surface/50 border border-line rounded-card overflow-hidden">
                 <div className="relative aspect-[16/10] w-full">
                   <Image
                     src="/gallery/session-1-lab.webp"
