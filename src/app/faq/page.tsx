@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import EVENT from '@/config/event';
@@ -76,6 +77,34 @@ export default function FAQPage() {
                 </p>
               </details>
             ))}
+          </div>
+
+          {/* Institutional Leadership & Faculty Support Card */}
+          <div className="bg-surface border border-line rounded-card overflow-hidden mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="relative aspect-[16/10] md:aspect-auto w-full min-h-[220px]">
+                <Image
+                  src="/gallery/closing-ceremony-stage.webp"
+                  alt="Closing ceremony address at Premier University in the presence of university leadership"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-6 flex flex-col justify-center">
+                <span className="text-[11px] font-mono text-accent mb-2">Academic & Faculty Leadership</span>
+                <h2 className="text-xl font-bold text-text mb-2">
+                  Academic backing & university endorsement
+                </h2>
+                <p className="text-muted text-sm leading-relaxed mb-4">
+                  The bootcamp is organized by the {EVENT.organizer.name} with formal guidance from Premier University faculty leadership and the Department of Computer Science & Engineering.
+                </p>
+                <p className="text-xs text-muted/80 font-mono">
+                  Venue: {EVENT.address}
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Other questions note */}
