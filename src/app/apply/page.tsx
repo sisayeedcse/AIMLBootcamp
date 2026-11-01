@@ -55,9 +55,9 @@ export default function ApplyPage() {
           </div>
 
           {/* Important Notice */}
-          <div className="border border-[#FF6A13]/40 bg-[#141414] rounded-lg p-6 mb-12 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="border border-[#f9a318]/40 bg-[#141414] rounded-lg p-6 mb-12 flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <p className="text-[#FF6A13] font-semibold text-base mb-1">
+              <p className="text-[#f9a318] font-semibold text-base mb-1">
                 Notice: {EVENT_CONFIG.application.disclaimer}
               </p>
               <p className="text-[#a8a8a8] text-sm">
@@ -82,7 +82,7 @@ export default function ApplyPage() {
                 href={EVENT_CONFIG.application.formUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-[#FF6A13] hover:underline"
+                className="text-xs text-[#f9a318] hover:underline"
               >
                 Having trouble viewing? Open full screen ↗
               </a>

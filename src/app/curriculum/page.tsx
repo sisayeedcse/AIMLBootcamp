@@ -180,7 +180,7 @@ export default function CurriculumPage() {
           {/* Phase summaries */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
             <div className="card">
-              <span className="font-mono text-sm text-[#FF6A13] font-medium">PHASE 1</span>
+              <span className="font-mono text-sm text-[#f9a318] font-medium">PHASE 1</span>
               <h2 className="text-xl font-bold mt-2 mb-2">Foundation Phase</h2>
               <p className="text-[#a8a8a8] text-sm mb-4">
                 Online · 3 Sessions · Focus on programming, scientific libraries, and exploratory data analysis.
@@ -191,7 +191,7 @@ export default function CurriculumPage() {
             </div>
 
             <div className="card">
-              <span className="font-mono text-sm text-[#FF6A13] font-medium">PHASE 2</span>
+              <span className="font-mono text-sm text-[#f9a318] font-medium">PHASE 2</span>
               <h2 className="text-xl font-bold mt-2 mb-2">Practical Phase</h2>
               <p className="text-[#a8a8a8] text-sm mb-4">
                 In person at Premier University · 5 Sessions · Focus on ML modeling, feature engineering, and app deployment.
@@ -209,18 +209,18 @@ export default function CurriculumPage() {
             {SESSIONS.map((sess) => (
               <div
                 key={sess.number}
-                className="border border-[#2b2b2b] bg-[#141414] rounded-lg p-6 md:p-8 hover:border-[#FF6A13]/50 transition-colors"
+                className="border border-[#2b2b2b] bg-[#141414] rounded-lg p-6 md:p-8 hover:border-[#f9a318]/50 transition-colors"
               >
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                   <div className="flex items-center gap-3">
-                    <span className="font-mono text-sm font-semibold text-[#FF6A13]">
+                    <span className="font-mono text-sm font-semibold text-[#f9a318]">
                       {sess.number}
                     </span>
                     <span className="text-xs text-[#a8a8a8] border border-[#2b2b2b] px-2.5 py-0.5 rounded">
                       {sess.phase}
                     </span>
                   </div>
-                  <span className="text-xs font-medium text-[#FF6A13] bg-[#FF6A13]/10 px-3 py-1 rounded-full border border-[#FF6A13]/20">
+                  <span className="text-xs font-medium text-[#f9a318] bg-[#f9a318]/10 px-3 py-1 rounded-full border border-[#f9a318]/20">
                     {sess.mode}
                   </span>
                 </div>
@@ -240,7 +240,7 @@ export default function CurriculumPage() {
                     <ul className="space-y-2 list-none p-0 m-0">
                       {sess.topics.map((topic, i) => (
                         <li key={i} className="text-sm text-[#e8e8e8] flex items-start gap-2">
-                          <span className="text-[#FF6A13] mt-0.5">•</span>
+                          <span className="text-[#f9a318] mt-0.5">•</span>
                           <span>{topic}</span>
                         </li>
                       ))}

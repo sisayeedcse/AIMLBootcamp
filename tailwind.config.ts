@@ -16,8 +16,8 @@ const config: Config = {
         text: '#ffffff',
         mute: '#a8a8a8',
         orange: {
-          DEFAULT: '#FF6A13',
-          hover: '#ff7b2e',
+          DEFAULT: '#f9a318',
+          hover: '#fba92e',
         },
       },
       fontFamily: {
