@@ -278,34 +278,25 @@ export default function Home() {
           <div className="wrap">
             <h2>Organized by</h2>
             <p className="lead">
-              Organized by IEEE Computer Society Premier University Student Branch Chapter, in collaboration with IEEE Premier University Student Branch and Premier University.
+              IEEE Computer Society Premier University Student Branch Chapter, together with the IEEE Premier University Student Branch and Premier University.
             </p>
             <div className="logos">
-              <div className="logo-card" title="IEEE Computer Society">
-                <Image
-                  src="/logos/ieee-cs.png"
-                  alt="IEEE Computer Society"
-                  width={240}
-                  height={60}
-                  className="max-h-[50px] w-auto object-contain"
+              <div>
+                <img
+                  src="/logos/ieee-cs-pu-sb-chapter.png"
+                  alt="IEEE Computer Society Premier University Student Branch Chapter"
                 />
               </div>
-              <div className="logo-card" title="IEEE">
-                <Image
-                  src="/logos/ieee.png"
-                  alt="IEEE"
-                  width={140}
-                  height={60}
-                  className="max-h-[46px] w-auto object-contain"
+              <div>
+                <img
+                  src="/logos/ieee-pu-sb.png"
+                  alt="IEEE Premier University Student Branch"
                 />
               </div>
-              <div className="logo-card" title="Premier University">
-                <Image
+              <div>
+                <img
                   src="/logos/premier-university.png"
                   alt="Premier University"
-                  width={240}
-                  height={60}
-                  className="max-h-[50px] w-auto object-contain"
                 />
               </div>
             </div>
