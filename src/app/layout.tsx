@@ -1,68 +1,90 @@
 import type { Metadata } from 'next';
-import { Inter, Space_Grotesk } from 'next/font/google';
+import { Sora, IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
+import EVENT_CONFIG from '@/config/event';
 
-const inter = Inter({
+const sora = Sora({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-sora',
+  weight: ['600', '700', '800'],
   display: 'swap',
 });
 
-const spaceGrotesk = Space_Grotesk({
+const ibmPlexSans = IBM_Plex_Sans({
   subsets: ['latin'],
-  variable: '--font-space-grotesk',
+  variable: '--font-ibm-plex-sans',
+  weight: ['400', '500', '600'],
   display: 'swap',
 });
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  variable: '--font-ibm-plex-mono',
+  weight: ['400', '500'],
+  display: 'swap',
+});
+
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : undefined) ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined) ||
+  'https://aiml-bootcamp.vercel.app';
 
 export const metadata: Metadata = {
-  title: 'IEEE AI/ML Bootcamp 2.0 | IEEE CS Premier University Student Branch Chapter',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: `${EVENT_CONFIG.name} | ${EVENT_CONFIG.organizer.university}`,
+    template: `%s | ${EVENT_CONFIG.name}`,
+  },
   description:
-    'Join the IEEE AI/ML Bootcamp 2.0 — From Fundamentals to Real-World Applications. A 10-day intensive bootcamp covering Python, Machine Learning, and AI Deployment. Organized by IEEE Computer Society Premier University Student Branch Chapter, Chattogram, Bangladesh.',
+    'A hands-on, beginner-friendly bootcamp by the IEEE Computer Society Premier University Student Branch Chapter. You start with Python and finish with a deployed machine learning application.',
   keywords: [
-    'IEEE AI ML Bootcamp',
-    'Machine Learning Bangladesh',
-    'Python Bootcamp Chittagong',
+    'IEEE CS AI/ML Bootcamp 2026',
     'IEEE Computer Society',
-    'Premier University IEEE',
-    'AI Bootcamp 2026',
-    'IEEE Student Branch',
-    'Data Science Bootcamp',
+    'Premier University',
+    'Machine Learning',
+    'Python',
+    'Artificial Intelligence',
+    'Chattogram',
     'Scikit-learn',
-    'Streamlit deployment',
+    'Streamlit',
   ],
-  authors: [{ name: 'IEEE CS Premier University Student Branch Chapter' }],
-  creator: 'IEEE CS Premier University Student Branch Chapter',
-  publisher: 'IEEE Computer Society',
+  authors: [{ name: EVENT_CONFIG.organizer.fullName }],
+  creator: EVENT_CONFIG.organizer.fullName,
+  publisher: EVENT_CONFIG.organizer.fullName,
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://aiml-bootcamp.ieeecs.pu.edu.bd',
-    siteName: 'IEEE AI/ML Bootcamp 2.0',
-    title: 'IEEE AI/ML Bootcamp 2.0 — Learn • Build • Deploy',
+    url: siteUrl,
+    siteName: EVENT_CONFIG.name,
+    title: `${EVENT_CONFIG.name} | ${EVENT_CONFIG.organizer.university}`,
     description:
-      'A flagship 10-day AI/ML bootcamp organized by IEEE CS Premier University SB Chapter. Covering Python, Machine Learning, and real-world deployment. Chattogram, Bangladesh.',
+      'Learn AI. Understand machine learning. Build something real. A hands-on bootcamp by IEEE CS Premier University Student Branch Chapter.',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'IEEE AI/ML Bootcamp 2.0 — From Fundamentals to Real-World Applications',
+        alt: `${EVENT_CONFIG.name} Banner`,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IEEE AI/ML Bootcamp 2.0 — Learn • Build • Deploy',
+    title: `${EVENT_CONFIG.name} | ${EVENT_CONFIG.organizer.university}`,
     description:
-      'A flagship 10-day AI/ML bootcamp by IEEE CS Premier University SB Chapter. Python → ML → Deployment.',
+      'Learn AI. Understand machine learning. Build something real. A hands-on bootcamp by IEEE CS Premier University Student Branch Chapter.',
     images: ['/og-image.png'],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
   },
-  metadataBase: new URL('https://aiml-bootcamp.ieeecs.pu.edu.bd'),
+  icons: {
+    icon: '/icon.svg',
+  },
 };
 
 export default function RootLayout({
@@ -71,13 +93,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} dark`} suppressHydrationWarning>
-      <head>
-        <meta name="theme-color" content="#050508" />
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
-      <body className={`${inter.className} bg-[#050508] text-white antialiased`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${sora.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="bg-black text-white antialiased min-h-screen flex flex-col" suppressHydrationWarning>
         {children}
       </body>
     </html>
